@@ -1,0 +1,58 @@
+!IF 0
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  PPJoy Virtual Joystick for Microsoft Windows
+//  Copyright (C) 2011 Deon van der Westhuysen
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+!ENDIF
+
+!if $(AMD64) || $(IA64)
+TARGETNAME=PPortJoy64
+!ELSE
+TARGETNAME=PPortJoy
+!ENDIF
+
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+MSC_WARNING_LEVEL=-W3 -WX
+
+TARGETLIBS=$(DDK_LIB_PATH)\hidclass.lib \
+           $(DDK_LIB_PATH)\ntoskrnl.lib
+
+INCLUDES=..\PPJoyInc;..\inc;..\..\inc;..\Branding
+
+SOURCES= \
+        pportjoy.c	\
+	pnp.c		\
+	power.c	\
+	ioctl.c	\
+	joystick.c	\
+	irputil.c	\
+	asyncio.c	\
+	mapping.c	\
+	joydefs.c	\
+	eventlog.c	\
+	config.c	\
+	timing.c	\
+	ppjoymsg.mc	\
+	PPortJoy.rc
+
+USE_MAPSYM=1
+

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>PPJoyKey virtual joystick</H2></CENTER>
+
+PPJoyKey is an application to convert keystrokes into Windows joystick input via the
+PPJoy Virtual Joystick interface. Below is a screenshot of PPJoyKey:
+<p>
+<CENTER>
+<IMG src="PPJoyKey.gif">
+</CENTER>
+
+<H3>Selecting a Virtual Joystick</H3>
+
+The drop-down list next to <b>Joystick device</b> selects the virtual joystick to use. The list
+contains all possible virtual joystick names; it does not detect which virtual joysticks are
+actually configured in PPJoy. You need to configure at least one virtual joystick in PPJoy.
+(See <a href= "../../UserManual/AddingJoysticks.htm">Adding a new joystick or gamepad</a>.)
+<p>
+The text to the right of the drop-down list displays the status of the selected virtual joystick.
+
+<H3>Selecting keystrokes for the joystick movements</H3>
+
+Below the virtual joystick are drop-down list are 8 axis and 16 button drop-down lists. The label
+next to each drop-down list indicate to which action the keystroke would be translated given the default
+PPJoy mapping. (See <a href= "../../UserManual/Mapping.htm"> Changing button and axis the mapping </a>.)
+<p>
+As soon as you select a new value from a drop-down list it will take effect. These lists contain
+all the DirectInput keyboard constants; some of them may not apply to your system.
+<p>
+Note that PPJoyKey does not remove any keystrokes from the input queue - whether they generate
+joystick movements or not.
+<p>
+Click on the <b>Scan</b> button next to a drop-down list to read a keypress and set the drop-down
+list to that value. If there is no key pressed when you click on Scan the following dialog will be
+displayed:
+<p>
+<CENTER>
+<IMG src="PPJoyKeyScan.gif">
+</CENTER>
+<p>
+If a key is already pressed when you click on Scan no dialog box will be displayed and the keypress
+will immediately be used as the new value for the drop-down box.
+
+
+<H3>Loading and saving the configuration</H3>
+
+PPJoyKey allows you to load and save the configuration to .INI files. You can also load an .ini
+file on startup by specifying it on the command-line when starting PPJoyKey. For example
+<tt>PPJoyKey.exe C:\Config\PPJoyKey.ini</tt> will automatically attempt to load C:\Config\PPJoyKey.ini
+on startup. If the config file is in the current directory you need to add ".\" in front of it. For
+example <tt>PPJoyKey.ini</tt> becomes <tt>.\PPJoyKey.ini</tt>.
+
+
+<H3>Additional notes</H3>
+<ul>
+ <li> Each instance of PPJoyKey feeds data for a single virtual joystick. You can run
+      multiple copies of PPJoyKey if you need to emulate more than joystick.
+ <li> The PPJoyKey application must be running while you use the virtual (keyboard) joystick.
+      You can however minimise it to the taskbar.
+</UL>
+</BODY>
+
+</HTML>

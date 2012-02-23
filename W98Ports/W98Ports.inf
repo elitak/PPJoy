@@ -1,0 +1,71 @@
+[Version]
+
+Signature="$CHICAGO$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+;
+Provider=%VENDOR%
+LayoutFile=layout.inf
+DriverVer=16/01/2004,0.78.0.000
+
+[SourceDisksNames]
+99=%DiskId%,,
+
+[SourceDisksFiles]
+W98Ports.sys = 99
+
+[DestinationDirs]
+CopyFilesSYS = 10,system32\drivers  ;%SystemRoot%\system32\drivers
+DefaultDestDir = 10,system32\drivers
+CopyFilesDLL = 11                   ;%SystemRoot%\system or system32 - 98 or Win2000
+
+[ControlFlags]
+ExcludeFromSelect.nt=*
+
+[Manufacturer]
+%VENDOR%=Vendor
+
+[Vendor]
+;Device Name	Install Section		PnP ID
+%W98PortsLPT1%=	W98PortsLPT1.Inst,	root\W98Ports
+%W98PortsLPT2%=	W98PortsLPT2.Inst,	root\W98Ports
+%W98PortsLPT3%=	W98PortsLPT3.Inst,	root\W98Ports
+
+[W98PortsLPT1.Inst]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = W98PortsLPT1.AddReg, AddReg.Vendor_Driver
+
+[W98PortsLPT2.Inst]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = W98PortsLPT2.AddReg, AddReg.Vendor_Driver
+
+[W98PortsLPT3.Inst]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = W98PortsLPT3.AddReg, AddReg.Vendor_Driver
+
+[W98PortsLPT1.AddReg]
+HKR,,PortName,,"LPT1"
+
+[W98PortsLPT2.AddReg]
+HKR,,PortName,,"LPT2"
+
+[W98PortsLPT3.AddReg]
+HKR,,PortName,,"LPT3"
+
+[CopyFilesSYS]
+W98Ports.sys
+
+[CopyFilesDLL]
+
+[AddReg.Vendor_Driver]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,"W98Ports.sys"
+
+[Strings]
+;localized strings
+VENDOR          = "Deon vd Westhuysen"
+DiskId          = "Parallel Port Joystick Installation and Drivers Disk"
+
+W98PortsLPT1    = "Windows 98 Parallel Port Joystick Support for LPT1"
+W98PortsLPT2    = "Windows 98 Parallel Port Joystick Support for LPT2"
+W98PortsLPT3    = "Windows 98 Parallel Port Joystick Support for LPT3"

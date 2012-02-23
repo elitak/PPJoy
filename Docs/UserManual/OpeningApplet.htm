@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Opening the PPJoy Control Panel applet</H1>
+
+This document describes how to open the PPJoy Control Panel applet. The PPJoy applet is used
+to add and remove joysticks that are plugged into the Parallel Port.
+
+<p>
+<center><IMG SRC="StartMenu.gif"></center>
+<p>
+First, click <b>Start</b> on the Taskbar, then <b>Settings</b> and finally on <b>Control Panel</b>.
+This will open the Control Panel.
+<p>
+<center><IMG SRC="ControlPanel.gif"></center>
+<p>
+In Control Panel, double-click on the <b>Parallel Port Joysticks</b> icon (shown highlighted). This
+will open the PPJoy Control Panel applet.
+<p>
+<center><IMG SRC="PPJoyMain.gif"></center>
+<p>
+This is the main PPJoy applet window. From this screen you will add and remove 
+joysticks that are connected to the Parallel Port. Joysticks that connect to
+the Gameport or USB will not show up here.
+<p>
+<center><IMG SRC="NoBusEnum.gif"></center>
+<p>
+If you get this error message, instead of the PPJoy applet, you need to make sure that PPJoyBus.sys
+is installed.
+<p>
+Under Windows 98/Me you need to install it yourself (see <a href="PostInstall98.htm">Windows 98
+Post-Install actions</a>). Under Windows 2000/XP you need to make sure your settings allow the 
+installation of unsigned drivers (see <a href="DriverSigning.htm">Driver signing</a> for more
+information) and re-install the software.
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PPJoyAPI", "PPJoyAPI.vcproj", "{0245E3E8-3A8D-4172-BC53-7523917795A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0245E3E8-3A8D-4172-BC53-7523917795A0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0245E3E8-3A8D-4172-BC53-7523917795A0}.Debug|Win32.Build.0 = Debug|Win32
+		{0245E3E8-3A8D-4172-BC53-7523917795A0}.Release|Win32.ActiveCfg = Release|Win32
+		{0245E3E8-3A8D-4172-BC53-7523917795A0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

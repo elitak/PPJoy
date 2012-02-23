@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>PPJoyDLL virtual joystick</H2></CENTER>
+
+PPJoyDLL is a container application to load other DLLs that provide joystick data. This data is then fed
+to Windows as joystick input via the PPJoy Virtual Joystick interface. Below is a screenshot of PPJoyDLL:
+<p>
+
+<CENTER>
+<IMG src="PPJoyDLL.gif">
+</CENTER>
+<P>
+
+<H3>Selecting a Virtual Joystick</H3>
+
+The drop-down list next to <b>Joystick device</b> selects the virtual joystick to use. The list
+contains all possible virtual joystick names; it does not detect which virtual joysticks are
+actually configured in PPJoy. You need to configure at least one virtual joystick in PPJoy.
+(See <a href= "../../UserManual/AddingJoysticks.htm">Adding a new joystick or gamepad</a>.)
+<p>
+The text to the right of the drop-down list displays the status of the selected virtual joystick.
+
+<H3>DLL name</H3>
+
+The name of the loaded DLL is shown greyed-out; the status of the DLL is shown to the right of
+the DLL name. When you select a new DLL type the existing DLL (if any) is unloaded and the DLL
+name will be blank.
+<p>
+Click on <b>Load .DLL</b> to load a new .DLL file.
+
+<H3>Selecting a DLL type</H3>
+
+The second drop-down list, <b> DLL type </b> determines which functions in the loaded DLL file
+to call to obtain joystick data. Currently the following DLL types are supported:
+<ul>
+ <li> <b>SmartPropo winmm.dll</b> for .DLL for SmartPropo input DLLs written for FMS by 
+      Tsutomu SEKI. You can find these DLLs on his download page at
+      <a href="http://www.sekiriki.jp/smartpropo/downloads.html">http://www.sekiriki.jp/smartpropo/downloads.html</a>.
+      <p>
+      These DLLs export the same basic joystick functions as winmm.dll shipped with Windows. You
+      can use any DLL in their place that exports the functions called <tt>joyGetPosEx()</tt> and
+      <tt>joyGetDevCapsA()</tt> and behaves like the corresponding Windows API functions.<p>
+ <li> <b>Callback DLL interface</b> is a new interface that indicates to PPJoyDLL when there is new
+      joystick data. It also supports more axes and buttons (up to 8 axes and 16 buttons) than the
+      SmartPropo winmm.dll interface.
+      <p>
+      The following .DLLs can be found in the PPJoy installation directory (Normally <tt>C:\Program Files\Parallel Port Joystick</tt>):
+      <ul>
+       <li><b>Futaba_PCM.dll</b>: For Futaba radios using PCM encoding.
+       <li><b>Futaba_PPM.dll</b>: For Futaba radios using PPM encoding.
+       <li><b>JR_PCM.dll</b>: For Jr radios using PCM encoding.
+       <li><b>JR_PPM.dll</b>: For Jr radios using PPM encoding.
+      </ul>
+      <p>
+      These .DLLs are based on the SmartPropo source by Tsutomu SEKI and works in the same way as
+      the original SmartPropo DLLs. You can get the modified source <a href="RCCallbackDLLs.zip" target="_blank"> here </a>.
+</ul>
+
+<H3>Update frequency</H3>
+
+The <b>Update interval</b> value determines how many microseconds (1/1000000s) PPJoyDLL will wait
+between joystick updates. This field is enabled for .DLL that has no way to indicate new data to
+PPJoyDLL. In these cases PPJoyDLL must poll the .DLL for new data. Setting this value too low will
+cause performance issues. Setting it too high my cause sluggish joystick movements. The default
+value of 25ms should be fine...
+<p>
+Click on <b>Set</b> to active any changes you make to the update interval. The application will
+automatically change values less than 5ms back to 5ms.
+<p>
+If this field is disabled it means the currently selected .DLL type indicates to PPJoy when there
+is new data. Polling is not needed in this case.
+
+<H3>Loading and saving the configuration</H3>
+
+PPJoyDLL allows you to load and save the configuration to .INI files. You can also load an .ini
+file on startup by specifying it on the command-line when starting PPJoyDLL. For example
+<tt>PPJoyDLL.exe C:\Config\PPJoyDLL.ini</tt> will automatically attempt to load C:\Config\PPJoyDLL.ini
+on startup. If the config file is in the current directory you need to add ".\" in front of it. For
+example <tt>PPJoyDLL.ini</tt> becomes <tt>.\PPJoyDLL.ini</tt>.
+
+
+<H3>Additional notes</H3>
+<ul>
+ <li> Each instance of PPJoyDLL feeds data for a single virtual joystick. You can run
+      multiple copies of PPJoyDLL if you need to use more than joystick device.
+ <li> The PPJoyDLL application must be running while you use the virtual (DLL-based) joystick.
+      You can however minimise it to the taskbar.
+</UL>
+</BODY>
+
+</HTML>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>Powering the Playstation interface</H2></CENTER>
+
+The Playstation console provides +3.5v and +7.6v power to the controllers. When you build a
+parallel port interface you must provide that power from somewhere. The circuits presented
+below are some suggestions.
+<p>
+If any of this doesn't make sense to you, find somebody to who it makes sense; and beg them
+to help you!
+
+<H3>Single Playstation controller</H3>
+
+A single PSX controller, without force feedback, can be powered directly from the parallel
+port. Simply add the following components to any of the interfaces:
+<P>
+<TD> <IMG src="PSXPortPower.gif"> </TD>
+<p>
+The connections in the diagram is <b>in addition to</b> the normal interface wiring. If all
+this sounds confusing - build the PSX interface like it is shown on the DirectPad Pro page:
+<a href="http://www.arcadecontrols.com/Mirrors/www.ziplabel.com/dpadpro/psx.html">
+http://www.arcadecontrols.com/Mirrors/www.ziplabel.com/dpadpro/psx.html</a>.
+<p>
+To enable force feedback (not yet supported by PPJoy) you need to provide 7.6v from somehwere.
+A 9v battery will probably do fine. Don't use a 9v wall adapter - see below for wall adapters.
+
+<H3>Multiple Playstation controllers</H3>
+
+Multiple controllers need to be powered from an external power source like a 9 to 12 volt wall
+adapter. Feed that into the diagram below, taken from the Megatap web page -
+<a href="http://www.stndev.btinternet.co.uk/megatap.htm"> http://www.stndev.btinternet.co.uk/megatap.htm</a>,
+to provide the 3.5v and 7.6v.
+<p>
+<TD> <IMG src="PSXRegPower.gif"> </TD>
+<p>
+<p>
+
+</BODY>
+
+</HTML>

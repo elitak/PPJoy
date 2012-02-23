@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>STFormat</H2></CENTER>
+
+<!-- H3>Diagram</H3 -->
+<CENTER>
+<IMG src="STFormat.gif">
+</CENTER>
+<P>
+
+<H3>Notes</H3>
+<ul>
+ <li> It is not recommended to build this interface. Rather build <a href="Amiga4Player.htm">Amiga4Player</a>.
+      This interface can be turned into the Amiga4Player interface by moving the Joystick 1 pin 6 (fire)
+      connection from pin 1 (nStrobe) to pin 13 (Select) on the Parallel Port.
+ <li> It is doubtful if this interface will properly work on any PC parallel port - the fire button on joystick 1 will not function properly
+ <li> General <a href="GeneralNotes.htm">notes</a> about interface construction
+</ul>
+<p>
+
+<H3>Credits</H3>
+The original diagram and information for this interface can be found at <a href="http://www.umich.edu/~archive/atari/Misc/4plradap.txt">http://www.umich.edu/~archive/atari/Misc/4plradap.txt</a>.  
+
+</BODY>
+
+</HTML>

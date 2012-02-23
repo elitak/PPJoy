@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>IOCTL-based Win32 joystick interface</H2></CENTER>
+
+<H3>Introduction</H3>
+
+This interface allows PPJoy to represent a virtual joystick interface. A Win32 application provides
+joystick input to PPJoy via IOCTL calls. PPJoy will feed this input into DirectInput as a joystick;
+Win32 applications will think the input comes from a real joystick.
+<P>
+Below we present the steps required to open the virtual joystick control device, send input to it
+and finally close the control device.
+
+<H3>Opening a PPJoy virtual joystick</H3>
+
+PPJoy creates a control device for each virtual joystick defined. This device is named <tt>\\.\PPJoyIOCTL1</tt>
+for the first virtual joystick through to <tt>\\.\PPJoyIOCTL16</tt> for the last one. Before you can
+send IOCTL commands to the joystick device you need a handle to it:
+<p>
+<tt>
+ HANDLE		h;<br>
+ h= CreateFile("\\\\.\\PPJoyIOCTL1",GENERIC_WRITE,FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0,NULL);
+</tt>
+
+<H3>Sending data to virtual joystick</H3>
+
+Joystick data is placed in a special structure and then sent to PPJoy using the
+<tt>DeviceIoControl()</tt> function. The structure consists is defined as follows:
+<p>
+<pre>
+#pragma pack(push,1)		/* All fields in structure must be byte aligned. */
+typedef struct
+{
+ unsigned long  Signature;             /* Signature to identify packet to PPJoy IOCTL */
+ char           NumAnalog;             /* Num of analog values we pass */
+ long           Analog[NUM_ANALOG];    /* Analog input values */
+ char           NumDigital;            /* Number of digital values we pass */
+ char           Digital[NUM_DIGITAL];  /* Digital input values */
+} JOYSTICK_STATE;
+#pragma pack(pop)
+</pre>
+<p>
+The <tt>Signature</tt> field should be set to the constant <tt>JOYSTICK_STATE_V1</tt> (defined in ppjioctl.h).
+<tt>NumAnalog</tt> and <tt>NumDigital</tt> should be set to the size of axis and button arrays respectively.
+PPJoy currently supports up to 63 analog and 128 digital values. Extra values in the arrays will be ignored.
+By default the first 8 analog values will be reported as axes and the first 16 digital values as buttons. 
+Undefined analog values will be centred; undefined digital values will be off/not pressed.
+<p>
+<b>NOTE:</b> The fields in the structure must be byte aligned with no padding between the fields.
+<p>
+<tt>PPJOY_AXIS_MIN</tt> and <tt>PPJOY_AXIS_MAX</tt> represents the minimum and maximum values for an analog value.
+For digital values 1 means pressed and 0 is not pressed.
+<p>
+The sequence of axes are as follows:
+<p>
+<ul>
+ <li> X Position
+ <li> Y Position
+ <li> Z Position
+ <li> Z Rotation
+ <li> Slider
+ <li> X Rotation
+ <li> Y Rotation
+ <li> Dial
+</ul>
+<p>
+PPJoy does not current support changing the number of axes or buttons reported; however extra axes or button can be
+mapped to "nothing".
+<p>
+A memory dump of the structure with two analog and four digital values looks like this:
+<pre>
+ 43 41 54 53       Header
+ 02                Two analog values to follow
+ xx xx xx xx       Analog value 1 (defaults to X Axis)
+ xx xx xx xx       Analog value 2 (defaults to Y Axis)
+ 04                Four digital values to follow
+ xx                Digital value 1 (defaults to Button 1)
+ xx                Digital value 2 (defaults to Button 2)
+ xx                Digital value 3 (defaults to Button 3)
+ xx                Digital value 4 (defaults to Button 4)
+</pre>
+After setting the axis and button values in the structure it is passed to PPJoy using
+<tt>DeviceIoControl()</tt> with an IOCTL code of <tt>IOCTL_PPORTJOY_SET_STATE</tt> (defined
+in ppjioctl.h). This code snippet illustrates:
+
+<pre>
+ JOYSTICK_STATE   JoyState;
+ DWORD            RetSize;
+ DWORD            rc;
+
+ /* Initialise JoyState structure here... */
+
+ if (!DeviceIoControl(h,IOCTL_PPORTJOY_SET_STATE,&JoyState,sizeof(JoyState),NULL,0,&RetSize,NULL))
+ {
+  rc= GetLastError();
+  /* ... */
+ }
+</pre>
+It is important to check the return code for the <tt>DeviceIOControl()</tt> funcion. If the control
+device is still open when the underlying joystick device is deleted the PPortJoy.sys driver cannot
+unload. In this case <tt>GetLastError()</tt> will return 2. When you get this error code close the
+handle to the control device and retry opening the control device.
+
+<H3>Closing the virtual joystick</H3>
+
+When the Win32 application is no longer using the control device, the control device handle should
+be closed with the <tt>CloseHandle()</tt> function.
+
+Also see the note above about closing the control device.
+
+<H3>Sample application</H3>
+This is a very simple sample application to demonstrate a Win32 application providing joystick input.
+It also contains the ppjioctl.h file needed to build other user mode joystick drivers.
+<p>
+Get <a href="IOCTLSample.zip" target="_blank">IOCTLSample</a> sample application (Microsoft Visual C++ 6.0)</a>.
+
+<p>
+<p>
+</BODY>
+
+</HTML>

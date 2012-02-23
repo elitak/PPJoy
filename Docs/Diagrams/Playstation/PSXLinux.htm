@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>Linux PSX interface</H2></CENTER>
+
+<!-- H3>Diagram</H3 -->
+
+<TABLE Border=0 ALIGN=CENTER><TR>
+<TD> <IMG src="PSXPins.gif"> </TD>
+
+<TD>
+<TABLE Border=2 ALIGN=CENTER>
+<TR> <TH ROWSPAN=2>Controller</TH> <TH COLSPAN=5>Parallel Port</TH> </TR>
+<TR>  <TH>Pad 1</TH> <TH>Pad 2</TH> <TH>Pad 3</TH> <TH>Pad 4</TH> <TH>Pad 5</TH> </TR>
+<TR> </TR>
+<TR> <TD>1 (Dat)</TD> <TD>10</TD> <TD>11</TD> <TD>12</TD> <TD>13</TD> <TD>15</TD> </TR>
+<TR> <TD>2 (Cmd)</TD> <TD ALIGN=CENTER COLSPAN=5>2</TD> </TR>
+<TR> <TD>3 (+7v)</TD> <TD ALIGN=CENTER COLSPAN=5><a href="PSXPower.htm">+7.6v</a></TD> </TR>
+<TR> <TD>4 (Gnd)</TD> <TD ALIGN=CENTER COLSPAN=5>18</TD> </TR>
+<TR> <TD>5 (+3v)</TD> <TD ALIGN=CENTER COLSPAN=5><a href="PSXPower.htm">+3.5v</a></TD> </TR>
+<TR> <TD>6 (Sel)</TD> <TD ALIGN=CENTER COLSPAN=5>3</TD> </TR>
+<TR> <TD>7 (Clk)</TD> <TD ALIGN=CENTER COLSPAN=5>4</TD> </TR>
+<TR> <TD>8      </TD> <TD ALIGN=CENTER COLSPAN=5>-</TD> </TR>
+<TR> <TD>9 (Ack)</TD> <TD ALIGN=CENTER COLSPAN=5>-</TD> </TR>
+</TABLE>
+</TD>
+</TR></TABLE>
+
+<P>
+
+<H3>Notes</H3>
+<ul>
+ <li> The pin numbering for the PSX connector presented here is reversed from the numbering in
+      the linux joystick-parport.txt document.
+ <li> The original linux interface does not include +7v required for force feedback operation.
+      The interface wil function properly without the +7v supply but no force feedback will be possible.
+ <li> See the <a href="PSXPower.htm">Powering PSX pads</a> page for details on how to provide the +3.5v
+      and +7.6v required by the PSX pads.
+ <li> This interface is the same as the PSX interface for SNESkey
+ <li> General <a href="../GeneralNotes.htm">notes</a> about interface construction
+ <li> This interface supports configurable timing parameters - see
+      <a href="../../../Docs/UserManual/Timing.htm">Changing timing parameters</a> on how to
+      change these values and <a href="../../../Docs/UserManual/TimingDetails.htm#psx">
+      Playstation timing parameters</a> for their meanings.
+ <li> PPJoy has a debug mode for playstation interfaces. See <a href="../../../Docs/UserManual/Options.htm">
+      Setting PPJoy global options</a> for a description of this feature and how to active it.
+</ul>
+<p>
+
+<H3>Credits</H3>
+The original diagram and information for this interface can be found at
+<a href="http://www.charmed.com/support/kernel/docs/joystick-parport.txt">
+http://www.charmed.com/support/kernel/docs/joystick-parport.txt</a>.  
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,387 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//  PPJoy Virtual Joystick for Microsoft Windows
+//  Copyright (C) 2011 Deon van der Westhuysen
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PPJoyKey..."
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PPJoyKey"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           ".",IDC_COMPNAME,40,10,134,8,SS_NOPREFIX
+    LTEXT           ".",IDC_PRODNAME,40,25,191,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           ".",IDC_COPYRIGHTSTR,40,34,191,16
+END
+
+IDD_PPJOYKEY_DIALOG DIALOGEX 0, 0, 434, 223
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PPJoy Keyboard to Virtual Joystick"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_JOYCOMBO,167,8,86,121,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_A2MINCOMBO,50,38,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A2MINSCAN,118,38,25,13
+    COMBOBOX        IDC_A2MAXCOMBO,50,53,65,56,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A2MAXSCAN,118,53,25,13
+    COMBOBOX        IDC_A1MINCOMBO,50,68,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A1MINSCAN,118,68,25,13
+    COMBOBOX        IDC_A1MAXCOMBO,50,83,65,56,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A1MAXSCAN,118,83,25,13
+    COMBOBOX        IDC_A3MINCOMBO,50,98,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A3MINSCAN,118,98,25,13
+    COMBOBOX        IDC_A3MAXCOMBO,50,113,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A3MAXSCAN,118,113,25,13
+    COMBOBOX        IDC_A4MINCOMBO,50,128,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A4MINSCAN,118,128,25,13
+    COMBOBOX        IDC_A4MAXCOMBO,50,143,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_A4MAXSCAN,118,143,25,13
+    COMBOBOX        IDC_BUT1COMBO,188,38,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT1SCAN,256,38,25,13
+    COMBOBOX        IDC_BUT2COMBO,188,53,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT2SCAN,256,53,25,13
+    COMBOBOX        IDC_BUT3COMBO,188,68,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT3SCAN,256,68,25,13
+    COMBOBOX        IDC_BUT4COMBO,188,83,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT4SCAN,256,83,25,13
+    COMBOBOX        IDC_BUT5COMBO,188,98,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT5SCAN,256,98,25,13
+    COMBOBOX        IDC_BUT6COMBO,188,113,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT6SCAN,256,113,25,13
+    COMBOBOX        IDC_BUT7COMBO,188,128,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT7SCAN,256,128,25,13
+    COMBOBOX        IDC_BUT8COMBO,188,143,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT8SCAN,256,143,25,13
+    CONTROL         "Beep on keypress (debug)",IDC_DEBUGBEEP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,182,120,13
+    PUSHBUTTON      "Load .ini",IDC_LOADINI,7,202,50,14
+    PUSHBUTTON      "Save .ini",IDC_SAVEINI,66,202,50,14
+    PUSHBUTTON      "Close",IDCANCEL,376,202,50,14
+    DEFPUSHBUTTON   "OK",IDOK,138,202,50,14,NOT WS_VISIBLE | WS_DISABLED
+    RTEXT           "Up",IDC_STATIC,7,40,40,13
+    RTEXT           "Down",IDC_STATIC,7,55,40,13
+    RTEXT           "Left",IDC_STATIC,7,70,40,13
+    RTEXT           "Right",IDC_STATIC,7,85,40,13
+    RTEXT           "Z Axis -",IDC_STATIC,7,100,40,13
+    RTEXT           "Z Axis +",IDC_STATIC,7,115,40,13
+    RTEXT           "Z Rotation -",IDC_STATIC,7,130,40,13
+    RTEXT           "Z Rotation +",IDC_STATIC,7,145,40,13
+    RTEXT           "Button 1",IDC_STATIC,145,40,40,13
+    RTEXT           "Button 2",IDC_STATIC,145,55,40,13
+    RTEXT           "Button 3",IDC_STATIC,145,70,40,13
+    RTEXT           "Button 4",IDC_STATIC,145,85,40,13
+    RTEXT           "Button 5",IDC_STATIC,145,100,40,13
+    RTEXT           "Button 6",IDC_STATIC,145,115,40,13
+    RTEXT           "Button 7",IDC_STATIC,145,130,40,13
+    RTEXT           "Button 8",IDC_STATIC,145,145,40,13
+    RTEXT           "Joystick device:",IDC_STATIC,109,10,55,14
+    LTEXT           "PPJoy status field",IDC_PPJOYSTATUS,255,10,160,11
+    COMBOBOX        IDC_BUT9COMBO,326,38,65,56,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT9SCAN,394,38,25,13
+    COMBOBOX        IDC_BUT10COMBO,326,53,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT10SCAN,394,53,25,13
+    COMBOBOX        IDC_BUT11COMBO,326,68,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT11SCAN,394,68,25,13
+    COMBOBOX        IDC_BUT12COMBO,326,83,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT12SCAN,394,83,25,13
+    COMBOBOX        IDC_BUT13COMBO,326,98,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT13SCAN,394,98,25,13
+    COMBOBOX        IDC_BUT14COMBO,326,113,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT14SCAN,394,113,25,13
+    COMBOBOX        IDC_BUT15COMBO,326,128,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT15SCAN,394,128,25,13
+    COMBOBOX        IDC_BUT16COMBO,326,143,65,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Scan",IDC_BUT16SCAN,394,143,25,13
+    RTEXT           "Button 9",IDC_STATIC,283,40,40,13
+    RTEXT           "Button 10",IDC_STATIC,283,55,40,13
+    RTEXT           "Button 11",IDC_STATIC,283,70,40,13
+    RTEXT           "Button 12",IDC_STATIC,283,85,40,13
+    RTEXT           "Button 13",IDC_STATIC,283,100,40,13
+    RTEXT           "Button 14",IDC_STATIC,283,115,40,13
+    RTEXT           "Button 15",IDC_STATIC,283,130,40,13
+    RTEXT           "Button 16",IDC_STATIC,283,145,40,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PPJOYKEY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 426
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 216
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PPJOYKEY_DIALOG DLGINIT
+BEGIN
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3220, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3320, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3420, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3520, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3620, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3720, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3820, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3920, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0030, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0031, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0032, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0033, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0034, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0035, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0036, 
+    0
+END
+
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) (unknown sub-lang: 0x7) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENS)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, 0x7
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SCANDIALOG DIALOG DISCARDABLE  0, 0, 134, 50
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scan for keypress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,41,28,50,14
+    CTEXT           "Press key to use for this control",IDC_STATIC,7,8,120,
+                    13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SCANDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 127
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""PPJoyKey.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\branding\\Joystick.ico"
+
+#endif    // English (U.S.) (unknown sub-lang: 0x7) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "PPJoyKey.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

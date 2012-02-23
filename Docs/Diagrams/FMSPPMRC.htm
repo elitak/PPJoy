@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>PPM radio control IRQ interface</H2></CENTER>
+
+<!-- H3>Diagram</H3 
+<CENTER>
+<IMG src="LPTswitch.gif">
+</CENTER>
+<P>
+-->
+
+The PPM IRQ interface allows the PC to read the PPM signal from a Radio Control transmitter
+fed to the IRQ line (pin 10) on the parallel port. No interface diagram is presented here
+since it is rather specific to the transmitter used. A web search should yield good results.
+<p>
+By default PPJoy assumes the following timing characteristics about the transmitter:
+<ul>
+ <li> <b>1.0ms minimum</b> PPM pulse length. Any pulse shorter than this will produce the
+      minimum axis value.
+ <li> <b>2.2ms maximum</b> PPM pulse length. Any pulse longer than this, but shorter than
+      the minimum sync, will produce the maximum axis value.
+ <li> <b>3.5ms min sync</b> PPM pulse length. A pulse longer than this is taken to mean the
+      start of a new frame.
+</ul>
+You can change these values if they are not suitable for your transmitter. See
+<a href="../../Docs/UserManual/Timing.htm">Changing timing parameters</a> on how to
+change these values and <a href="../../Docs/UserManual/TimingDetails.htm#ppm">PPM R/C transmitter
+timing parameters</a> for their meanings.
+<p>
+There is a debug mode you can use if your interface is not working properly. See <a href="../../Docs/UserManual/Options.htm">
+Setting PPJoy global options</a> to turn on the debug mode.
+<p>
+Now try connecting and disconnecting pin 10 (IRQ) on the parallel port to pin 18 (Ground). Each
+time you make or break the connection you should hear one or more clicks. Now you know that PPJoy
+is properly hooked up to the IRQ.
+<p>
+Next connect your transmitter interface to the parallel port. You should be hearing a series of
+clicks (it might sound like a continuous tone). This means the parallel port can detect the signal
+from your TX. If not the voltage from your TX interface might not be enough and you may need
+some form of amplifier in your interface.
+<p>
+If you heard a tone in the above step but stil see no joystick movement you may want to try and
+modify the timing parameters for the joystick. It may also mean that you TX is sending a different
+signal type. This interface only supports a PPM signal.
+
+<H3>Notes</H3>
+<ul>
+ <li> This interface is only supported on Windows 2000/XP. Windows 98/Me does not
+      provide the support functions that PPJoy requires. This interface is also not
+      support when the "Don't allocate ports" option is turned on.
+ <li> General <a href="GeneralNotes.htm">notes</a> about interface construction.
+</ul>
+<p>
+
+<H3>Credits</H3>
+Diagrams and information for this interface can be found at 
+<a href="http://www.csd.net/~cgadd/fms/fms_instruct2.htm#AnschlusseinerFernsteuerungandenParallelport">
+http://www.csd.net/~cgadd/fms/fms_instruct2.htm#AnschlusseinerFernsteuerungandenParallelport</a>,
+<a href="http://myweb.absa.co.za/eric.brouwer/interface.htm">
+http://myweb.absa.co.za/eric.brouwer/interface.htm</a> or 
+<a href="http://www.heliguy.com/nexus/fmsinterface.html">
+http://www.heliguy.com/nexus/fmsinterface.html</a>.
+
+
+</BODY>
+
+</HTML>

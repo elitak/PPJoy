@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Changing the joystick interface timing parameters</H1>
+
+Certain joystick interfaces require relatively long delays, which uses a lot of CPU cycles,
+to read the joystick. PPJoy allows you to customise the timing values used in order to minimize
+the CPU usage.
+<p>
+Below is a list of the joystick and gamepad interfaces that have configurable timing parameters.
+<ul>
+ <li> Genesis gamepads
+ <li> NES/SNES gamepads
+ <li> Playstation controllers
+ <li> LPT-switch controller
+ <li> FMS PPM R/C transmitter
+</ul>
+<p>
+The following topics will explain changing timing parameters in more detail:
+<ul>
+ <li> <a href="#concepts">Important concepts</a>
+ <li> <a href="#changing">Changing the joystick timing parameters</a>
+ <li> <a href="#deleting">Deleting timing parameters </a>
+</ul>
+
+<a name="concepts"><h3> Important concepts </h3></a>
+
+There are three levels of timing parameters in PPJoy:
+<ul>
+ <li> The <b> Default timing </b> is used when there are no more specific (interface or individual) timing parameters
+      for a particular joystick. They are probably not optimal for your controller but should be adequate in most
+      cases.
+ <li> The <b> Interface timing </b> applies to all joysticks, without individual timings, that connect
+      to this interface type.
+ <li> <b> Individual timing </b> applies to a single joystick.
+</ul>
+If individual timing parameters are defined for a joystick they will always be used. If a joystick has no individual
+timing parameters the interface timing will be used instead. If there is no individual or interface timing for a
+joystick the built-in default timing parameters will be used.
+<p>
+Different interfaces, even for the same controller type, have separate interface timing settings. For example, the
+DirectPad Pro and Linux interfaces for Playstation controllers will each have their own interface timing parameters.
+<p>
+
+<a name="changing"><h3> Changing the joystick timing parameters </h3></a>
+<p>
+<center><IMG SRC="Timing1.gif"></center>
+<p>
+Start by selecting the joystick to change and click on the <b>Timing...</b> button. A new dialog box, similar
+to the one below, should appear.
+<p>
+<center><IMG SRC="Timing2.gif"></center>
+<p>
+Broadly there are two groups of options: the interface (top three) and individual (bottom three) options. If no timing
+parameters exist for a given category (interface or individual) you are offered the chance to create new timing parameters;
+else you have to option to modify or delete them. See the section <a href="#deleting">Deleting timing parameters</a> for
+more information on how to delete the timing parameters.
+<p>
+The interface timing parameters will affect all controllers using that interface type <b>unless</b> the controller has
+its own individual parameters. Individual timing parameters will always take precedence over interface parameters.
+<p>
+If you choose a Set (Create) or Modify option and click on <b>Next</b> you will see a screen like the one below. The exact
+screen will depend on the joystick type for which you want to modify the timing parameters.
+<p>
+<center><IMG SRC="Timing3.gif"></center>
+<p>
+The top part of the screen will list the timing parameters available for the selected controller or interface and allow
+you to change them. Click on <b>Apply</b> to activate the new parameters while keeping the wizard open. Clicking on
+<b>Finish</b> will apply the new timing values and close the wizard.
+<p>
+The best strategy to configure timing parameters is probably to gradually lower, and apply, one parameter until the
+controller's operation becomes unstable. Repeat this process for the other parameters.
+<p>
+Clicking on <b>Reset defaults</b> will change the timing parameters back to the values they were when the wizard was
+started and apply them.
+<p>
+Click on <b>Finish</b> after modifying the timing parameters.
+<p>
+
+<a name="deleting"><h3> Deleting timing parameters </h3></a>
+<p>
+<center><IMG SRC="Timing1.gif"></center>
+<p>
+Start by selecting a joystick and clicking on the <b>Timing...</b> button.
+<p>
+<center><IMG SRC="Timing4.gif"></center>
+<p>
+Select whether you want to delete the individual timing parameters for a joystick or the interface timing parameters.
+Then  click on <b>Next</b>. If timing parameters do not exist the option to delete it will be greyed out.
+<p>
+<center><IMG SRC="Timing5.gif"></center>
+<p>
+This is the confirmation screen before the delete. You have to select Yes before the <b>Finish</b> button
+will be activated. After you selected Yes, click on <b>Finish</b>.
+
+</BODY>
+
+</HTML>

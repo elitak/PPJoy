@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RCCallbackDLLs", "RCCallbackDLLs.vcproj", "{3629BB32-DC13-4F49-9033-A9825488552B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Futaba_PCM|Win32 = Debug Futaba_PCM|Win32
+		Debug Futaba_PPM|Win32 = Debug Futaba_PPM|Win32
+		Debug JR_PCM|Win32 = Debug JR_PCM|Win32
+		Debug JR_PPM|Win32 = Debug JR_PPM|Win32
+		Release Futaba_PCM|Win32 = Release Futaba_PCM|Win32
+		Release Futaba_PPM|Win32 = Release Futaba_PPM|Win32
+		Release JR_PCM|Win32 = Release JR_PCM|Win32
+		Release JR_PPM|Win32 = Release JR_PPM|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug Futaba_PCM|Win32.ActiveCfg = Debug Futaba_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug Futaba_PCM|Win32.Build.0 = Debug Futaba_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug Futaba_PPM|Win32.ActiveCfg = Debug Futaba_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug Futaba_PPM|Win32.Build.0 = Debug Futaba_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug JR_PCM|Win32.ActiveCfg = Debug JR_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug JR_PCM|Win32.Build.0 = Debug JR_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug JR_PPM|Win32.ActiveCfg = Debug JR_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Debug JR_PPM|Win32.Build.0 = Debug JR_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release Futaba_PCM|Win32.ActiveCfg = Release Futaba_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release Futaba_PCM|Win32.Build.0 = Release Futaba_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release Futaba_PPM|Win32.ActiveCfg = Release Futaba_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release Futaba_PPM|Win32.Build.0 = Release Futaba_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release JR_PCM|Win32.ActiveCfg = Release JR_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release JR_PCM|Win32.Build.0 = Release JR_PCM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release JR_PPM|Win32.ActiveCfg = Release JR_PPM|Win32
+		{3629BB32-DC13-4F49-9033-A9825488552B}.Release JR_PPM|Win32.Build.0 = Release JR_PPM|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

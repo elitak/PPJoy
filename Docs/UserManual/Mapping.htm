@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Changing button and axis the mapping</H1>
+
+PPJoy allows you to completely change the way the joystick buttons and axes configured. The following
+topics will explain the mapping process in more detail:
+<ul>
+ <li> <a href="#concepts">Important concepts</a>
+ <li> <a href="#changing">Changing the button and axis mapping of a joystick </a>
+ <li> <a href="#deleting">Deleting a joystick mapping </a>
+</ul>
+
+<a name="concepts"><h3> Important concepts </h3></a>
+
+There are three levels of mapping in PPJoy:
+<ul>
+ <li> The <b> Default mapping </b> is used when there is no more specific (interface or individual) mapping for
+      a particular joystick.
+ <li> The <b> Interface mapping </b> mapping applies to all joysticks, without individual mappings, that connect
+      to this interface type.
+ <li> <b> Individual mappings </b> apply to a single joystick.
+</ul>
+If an individual mapping is defined for a joystick it will always be used. If a joystick has no individual mapping
+the interface mapping will be used instead. If there is no individual or interface mapping for a joystick the built-in
+default mapping will be used.
+<p>
+The joystick mapping is used to transform the raw digital and analog values that PPJoy reads from a joystick into button
+presses, axis movements and POV direction.
+<ul>
+ <li> Controls with an on-off motion are read as digital values. All the buttons, and the axes on most of the supported
+      joysticks, fall into this category.
+ <li> Controls with a range of motion are read as analog values. Currently the Playstation controllers, FMS PPM R/C and
+      the virtual joystick can return analog values.
+</ul>
+<p>
+A button press can be mapped in the following ways:
+<ul>
+ <li> As a digital value read from a joystick.
+ <li> When an analog control is moved to its minimum position.
+ <li> When an analog control is moved to its maximum position.
+ <li> As nothing, in which case the button will never be pressed.
+</ul>
+<p>
+An axis can be mapped in the following ways:
+<ul>
+ <li> Directly as an analog value read from a joystick.
+ <li> Reverse of the analog value read from a joystick.
+ <li> Two digital values, one for minimum and one for the maximum axis position.
+ <li> As nothing, in which case the axis will always be centred.
+</ul>
+A POV hat can be mapped in three ways:
+<ul>
+ <li> As four directions. These directional input can be any combination of button presses or axis min/max movements.
+ <li> As a continuous direction between 0 and 359 degrees. In this case a single analog input is used.
+ <li> As nothing, in which case the POV hat will report not pressed.
+</ul>
+<p>
+PPJoy allows you change the number of buttons and axes and POV hats reported for a joystick. By default only the virtual joystick and PSX controllers have a POV hat defined.
+
+<p>
+
+<a name="changing"><h3> Changing the button and axis mapping of a joystick </h3></a>
+<p>
+<center><IMG SRC="Mapping1.gif"></center>
+<p>
+Start by selecting the joystick to change and click on the <b>Mapping...</b> button.. A new dialog box, similar
+to the one below, should appear.
+<p>
+<center><IMG SRC="Mapping2.gif"></center>
+<p>
+Broadly there are two groups of options: the interface (top three) and individual (bottom three) options. If no mapping exists for a given category
+(interface or individual) you are offered the chance to create a mapping;
+else you have to option to modify or delete the mapping. See the section
+<a href="#deleting">Deleting a mapping</a> for more information
+on how to delete a joystick mapping.
+<p>
+The interface mapping will affect all controllers using that interface type <b>unless</b> the controller has its own individual mapping. Individual
+mappings will always take precedence over interface mappings.
+<p>
+If you choose a Set (Create) or Modify option and click on <b>Next</b> you will see the screen below.
+<p>
+<center><IMG SRC="Mapping3.gif"></center>
+<p>
+This screen will show you the number of buttons, axes and hats that PPJoy will report to Windows for this device. It will also
+show you the HID types reported for the axes. You can change the number of axes, buttons and hats reported to DirectX
+as well as their types. Older verions of DirectX does not like this and will cause DrWatson errors in the Game
+Controllers Control Panel and possibly other applications as well. Changing these values with DirectX 9 installed
+on Windows XP seems to work fine.
+<p>
+Click on <b>Next</b> to continue.
+<p>
+<center><IMG SRC="Mapping4.gif"></center>
+<p>
+This screen will allow you to change the mapping for each axis. Note that playstation pads have
+two mapping modes - digital and analog  mode. After configuring the mapping for digital mode you will
+be shown the same screens to configure the mapping for analog mode. Currently all other devices only
+have a single mapping mode.
+<p>
+An axis can be mapped in one of the following ways:
+<ul>
+ <li> Directly as an analog value read from a joystick, for example an analog Playstation pad. ('<b>Analog <i>xx</i></b>' in the drop-down list.)
+ <li> An analog value read from a joystick with the direction reversed. ('<b>Analog <i>xx</i> rev</b>' in the drop-down list.)
+ <li> Two digital values (buttons or digital joystick axes), one for minimum and one for the maximum axis position.
+       ('<b>Digital <i>xx</i></b>' in the drop-down list.)
+ <li> As nothing, in which case the axis will always be centred  ('<b>nothing</b>' in the drop-down list.)
+</ul>
+The easiest way to set the mapping for a particular axis is to click on the <b>Scan</b> button in the <b>Min</b> column
+next to the axis you want to change. The following screen will appear:
+<p>
+<center><IMG SRC="Mapping7.gif"></center>
+<p>
+Now press the button, or move the control in the minimum (up, left) direction, that you want to map to this axis. As
+soon as PPJoy senses any button press or axis movement on the selected device it will close the scan dialog and
+update the mapping page. (If a button is pressed, or an axis moved, before clicking on the scan button the mapping
+page will immediately be updated; and the scan dialog will not appear.)
+<p>
+When an analog value is selected in the Min column for an axis the Max column for that axis will be greyed out. This is because
+a single analog value completely defines an axis. When a digital value is entered in the axis minimum column another digital value
+must be specified in the maximum column for that axis.
+<p>
+Most interfaces will report the following values for up, down, left and right:
+<ul>
+ <li> <b>D 0</b> Joystick is pressed "UP"
+ <li> <b>D 1</b> Joystick is pressed "DOWN"
+ <li> <b>D 2</b> Joystick is pressed "LEFT"
+ <li> <b>D 3</b> Joystick is pressed "RIGHT"
+</ul>
+<p>
+When all the axis mappings are configured, click on <b>Next</b>. This takes you to the button mapping page.
+<p>
+<center><IMG SRC="Mapping5.gif"></center>
+<P>
+The button mapping page operates similar to the axis mapping page. A button can be mapped in the following ways:
+<ul>
+ <li> Directly as digital value read from a joystick. ('<b>Digital <i>xx</i></b>' in the drop-down list.)
+ <li> An analog value set to its minimum value (position). ('<b>Analog <i>xx</i> min</b>' in the drop-down list.)
+ <li> An analog value set to its maximum value (position). ('<b>Analog <i>xx</i> max</b>' in the drop-down list.)
+ <li> As nothing, in which case the button will never be pressed ('<b>nothing</b>' in the drop-down list.)
+</ul>
+<p>
+The <b>scan</b> button operates the same as it does on the axis mapping page.
+<p>
+Click on <b>Next</b> when you configured all the buttons. If the device has more than 16 buttons you will
+be shown the button mapping page again, this time for buttons 17 to (possibly) 32; otherwise you will proceed
+to the POV hat mapping page. If there is no POV hat defined for the device this page is skipped.
+<p>
+<center><IMG SRC="Mapping10.gif"></center>
+<P>
+If you select a directional button POV you must provide a mapping for 4 buttons. The mapping for these direction
+buttons works exactly like the mapping of (fire) buttons on the previous page.
+<p>
+For a continuous position POV you must provide an analog input for the POV - you cannot use any digital inputs
+here. Just like for axes you can use the analog value in its normal and reversed senses. Take note that very few
+devices provides analog inputs.
+<p>
+If this device has more than one configuration (like playstation pads) the <b>Next</b> button will take you to the axis mapping
+page for the next mapping. After you have finished configuring the POV hats for the last mapping mode
+you will be moved on to the finish screen.
+<p>
+<center><IMG SRC="Mapping6.gif"></center>
+<p>
+This screen confirms that the mapping is complete. It is also your last chance to cancel without writing
+the mapping to the joystick driver. Click on <b>Finish</b> to write the new mapping to the driver.
+<p>
+
+<a name="deleting"><h3> Deleting a joystick mapping </h3></a>
+<p>
+<center><IMG SRC="Mapping1.gif"></center>
+<p>
+Start by selecting a joystick and clicking on the <b>Mapping...</b> button.
+<p>
+<center><IMG SRC="Mapping8.gif"></center>
+<p>
+Select whether you want to delete the individual mapping for a joystick or the interface mapping. Then 
+click on <b>Next</b>. If a mapping does not exist the option to delete it will be greyed out.
+<p>
+<center><IMG SRC="Mapping9.gif"></center>
+<p>
+This is the confirmation screen before the delete. You have to select Yes before the <b>Finish</b> button
+will be activated. After you selected Yes, click on <b>Finish</b>.
+
+</BODY>
+
+</HTML>

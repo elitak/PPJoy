@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+</HEAD>
+
+<SCRIPT>
+var Content;
+var Args;
+var ArgStart;
+var ArgEnd;
+
+Content= "PPJoyIntro.htm";
+Args= location.search;
+if (Args!=null)
+{
+ ArgStart= Args.lastIndexOf("Page=");
+ if (ArgStart>=0)
+ {
+  ArgStart= ArgStart+5
+  ArgEnd= Args.indexOf ("&",ArgStart);
+  if (ArgEnd<0)
+  {
+   ArgEnd= Args.length;
+  }
+  Content= Args.substring(ArgStart,ArgEnd);
+ }
+}
+
+document.write(" <FRAMESET COLS=\"230,*\">");
+
+document.write("  <FRAMESET ROWS=\"120,*\">");
+document.write("   <FRAME SRC=\"logo.htm\" NAME=\"logo\" FRAMEBORDER=0 MARGINHEIGHT=0 SCROLLING=NO NORESIZE >");
+document.write("   <FRAME SRC=\"Contents1.htm\" NAME=\"left\" FRAMEBORDER=0 >");
+document.write("  </FRAMESET>");
+
+document.write("  <FRAME SRC=\""+Content+"\" NAME=\"right\">");
+document.write(" </FRAMESET>");
+</SCRIPT>
+
+<NOFRAMES>
+<BODY>
+The PPJoy documentation requires a browser that supports frames.
+</BODY>
+</NOFRAMES>
+</HTML>

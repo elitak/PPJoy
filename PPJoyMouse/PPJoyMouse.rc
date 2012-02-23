@@ -1,0 +1,261 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//  PPJoy Virtual Joystick for Microsoft Windows
+//  Copyright (C) 2011 Deon van der Westhuysen
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PPJoyMouse..."
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PPJoyMouse"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           ".",IDC_COMPNAME,40,10,134,8,SS_NOPREFIX
+    LTEXT           ".",IDC_PRODNAME,40,25,191,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           ".",IDC_COPYRIGHTSTR,40,34,191,16
+END
+
+
+IDD_PPJOYMOUSE_DIALOG DIALOGEX 0, 0, 182, 122
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PPJoy Mouse to Virtual Joystick"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,125,82,50,14,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Close",IDCANCEL,125,101,50,14
+    COMBOBOX        IDC_JOYCOMBO,75,13,86,121,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "Joystick device:",IDC_STATIC,20,15,51,10
+    CTEXT           "PPJoy status field",IDC_PPJOYSTATUS,7,29,168,11
+    RTEXT           "X Gain:",IDC_STATIC,45,50,27,8
+    RTEXT           "Y Gain:",IDC_STATIC,45,65,27,8
+    RTEXT           "Z Gain:",IDC_STATIC,45,80,27,8
+    EDITTEXT        IDC_XGAINEDIT,75,48,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_YGAINEDIT,75,63,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_ZGAINEDIT,75,78,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Load .ini",IDC_LOADINI,7,101,50,14
+    PUSHBUTTON      "Save .ini",IDC_SAVEINI,66,101,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PPJOYMOUSE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PPJOYMOUSE_DIALOG DLGINIT
+BEGIN
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3220, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3320, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3420, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3520, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3620, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3720, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3820, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3920, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0030, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0031, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0032, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0033, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0034, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0035, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0036, 
+    0
+END
+
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) (unknown sub-lang: 0x7) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENS)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, 0x7
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""PPJoyMouse.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\branding\\Joystick.ico"
+
+#endif    // English (U.S.) (unknown sub-lang: 0x7) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "PPJoyMouse.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

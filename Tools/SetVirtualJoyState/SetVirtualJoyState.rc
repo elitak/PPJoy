@@ -1,0 +1,319 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SetVirtualJoyState"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SetVirtualJoyState v1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Written by Deon van Westhuysen",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "Copyright (C) 2004",IDC_STATIC,40,34,119,8
+END
+
+IDD_SETVIRTUALJOYSTATE_DIALOG DIALOGEX 0, 0, 212, 233
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "SetVirtualJoyState"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_JOYCOMBO,89,18,86,121,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    RTEXT           "Joystick device:",IDC_STATIC,34,20,52,11
+    CTEXT           "PPJoy status field",IDC_PPJOYSTATUS,34,35,145,11
+    PUSHBUTTON      "OK",IDOK,101,212,50,14,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,155,212,50,14
+    EDITTEXT        IDC_ANALOGEDIT1,54,54,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 1:",IDC_STATIC,15,56,35,11
+    EDITTEXT        IDC_ANALOGEDIT2,54,70,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 2:",IDC_STATIC,15,72,35,11
+    EDITTEXT        IDC_ANALOGEDIT3,54,86,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 3:",IDC_STATIC,15,88,35,11
+    EDITTEXT        IDC_ANALOGEDIT4,54,102,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 4:",IDC_STATIC,15,104,35,11
+    EDITTEXT        IDC_ANALOGEDIT5,54,118,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 5:",IDC_STATIC,15,120,35,11
+    EDITTEXT        IDC_ANALOGEDIT6,54,134,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 6:",IDC_STATIC,15,136,35,11
+    EDITTEXT        IDC_ANALOGEDIT7,54,150,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 7:",IDC_STATIC,15,152,35,11
+    EDITTEXT        IDC_ANALOGEDIT8,54,166,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Analog 8:",IDC_STATIC,15,168,35,11
+    EDITTEXT        IDC_DIGITALEDIT1,153,54,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Digital 1:",IDC_STATIC,115,56,35,11
+    EDITTEXT        IDC_DIGITALEDIT2,153,70,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Digital 2:",IDC_STATIC,115,72,35,11
+    EDITTEXT        IDC_DIGITALEDIT3,153,86,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Digital 3:",IDC_STATIC,115,88,35,11
+    EDITTEXT        IDC_DIGITALEDIT4,153,102,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Digital 4:",IDC_STATIC,115,104,35,11
+    EDITTEXT        IDC_DIGITALEDIT5,153,118,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Digital 5:",IDC_STATIC,115,120,35,11
+    EDITTEXT        IDC_DIGITALEDIT6,153,134,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Digital 6:",IDC_STATIC,115,136,35,11
+    EDITTEXT        IDC_DIGITALEDIT7,153,150,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Digital 7:",IDC_STATIC,115,152,35,11
+    EDITTEXT        IDC_DIGITALEDIT8,153,166,40,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Digital 8:",IDC_STATIC,115,168,35,11
+    DEFPUSHBUTTON   "Update",IDC_UPDATE,79,194,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SetVirtualJoyState MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SetVirtualJoyState\0"
+            VALUE "LegalCopyright", "Copyright (C) 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SetVirtualJoyState.EXE\0"
+            VALUE "ProductName", "SetVirtualJoyState Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SETVIRTUALJOYSTATE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 226
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETVIRTUALJOYSTATE_DIALOG DLGINIT
+BEGIN
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3220, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3320, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3420, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3520, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3620, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3720, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3820, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 19, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3920, 
+"\000" 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0030, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0031, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0032, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0033, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0034, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0035, 
+    IDC_JOYCOMBO, 0x403, 20, 0
+0x6956, 0x7472, 0x6175, 0x206c, 0x6f6a, 0x7379, 0x6974, 0x6b63, 0x3120, 
+0x0036, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About SetVirtualJoyState..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) (unknown sub-lang: 0x7) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENS)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, 0x7
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""SetVirtualJoyState.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "SetVirtualJoyState.ico"
+#endif    // English (U.S.) (unknown sub-lang: 0x7) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "SetVirtualJoyState.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

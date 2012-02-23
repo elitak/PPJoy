@@ -1,0 +1,93 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//  PPJoy Virtual Joystick for Microsoft Windows
+//  Copyright (C) 2011 Deon van der Westhuysen
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+//
+// PPJoyCpl.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+
+#include <branding.h>
+
+/////////////////////////////////////////////////////////////////////////////
+
+#ifndef _MAC		// #ifndef comes from Visual Studio 6 - still needed?
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION		VER_PRODUCTVERSION
+ PRODUCTVERSION		VER_PRODUCTVERSION
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments",			"\0"
+            VALUE "CompanyName",		COMPANY_NAME "\0"
+            VALUE "FileDescription",	CPL_APPLET_DESCRIPTION "\0"
+            VALUE "FileVersion",		VER_PRODUCTVERSION_STR
+            VALUE "InternalName",		CPL_APPLET_FILENAME
+            VALUE "LegalCopyright",		COPYRIGHT_STRING "\0"
+            VALUE "LegalTrademarks",	"\0"
+            VALUE "OriginalFilename",	CPL_APPLET_FILENAME "\0"
+            VALUE "PrivateBuild",		"\0"
+            VALUE "ProductName",		PRODUCT_NAME_LONG "\0"
+            VALUE "ProductVersion",		VER_PRODUCTVERSION_STR
+            VALUE "SpecialBuild",		"\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+		VALUE "Translation", 0x0409, 1252
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_CPL_NAME            CPL_APPLET_CPLNAME
+    IDS_CPL_DESC            CPL_APPLET_CPLDESC
+END
+
+#endif    // !_MAC

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<body>
+
+<a name="toc"><h1> Frequently Asked Questions </h1></a>
+
+This list contains the answers to the following frequently asked questions:
+<ul>
+ <li> <a href="#faq1"> To what mode should I configure my parallel port? </a>
+ <li> <a href="#faq2"> Do I really need an adapter for my joystick? </a>
+ <li> <a href="#faq3"> Which interface (adapter) should I build? </a>
+ <li> <a href="#faq4"> The PPJoy diagram for an adapter looks different from the original... </a>
+ <li> <a href="#faq5"> Is PPJoy compatible with adapters for Linux? </a>
+ <li> <a href="#faq6"> Is PPJoy compatible with adapters for DirectPad Pro? </a>
+ <li> <a href="#faq7"> I think the adapter or PPJoy damaged my computer or parallel port</a>
+ <li> <a href="#faq8"> What diode is used in the joystick adapters? </a>
+
+ <li> <a href="#faq9"> Can I change the way PPJoy assigns my joystick buttons? </a>
+ <li> <a href="#faq10"> Why can't I use the FMS PPM interface under Windows 98/Me? </a>
+ <li> <a href="#faq11"> Yellow exclamation mark over "Parallel Port Joystick Bus" icon, Error code 2, in Device Manager.</a>
+ <li> <a href="#faq12"> PPJoy Control Panel error message "Cannot open the Parallel Port Joystick Bus Enumerator." </a>
+ <li> <a href="#faq13"> PPJoy does not respond to my Playstation controller. </a>
+ <li> <a href="#faq14"> How do I make PPJoy work with my software? Do I copy a DLL? </a>
+ <li> <a href="#faq15"> Is PPJoy a new version of DirectPad Pro for Windows 2000/XP? </a>
+ <li> <a href="#faq16"> Can I get a copy of the PPJoy source code? </a>
+ <li> <a href="#faq17"> My axes are "reversed". Help! </a>
+ <li> <a href="#faq18"> The up/down buttons on my DirectPad Pro interface does not work </a>
+
+</ul>
+<p>
+<br>
+
+<a name="faq1"><b>Q: To what mode should I configure my parallel port?</b></a></br>
+<b>A:</b> PPJoy should be able to able to work with your parallel port in SPP, EPP or ECP modes.
+When running PPJoy will try to switch the port to SPP mode. In some cases it may
+be necessary to configure your parallel port to SPP in your computer's BIOS setup.<p>
+If there is an IRQ assigned to your printer port you may also want to make sure
+that it is unique - i.e. not shared with other devices.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq2"><b>Q: Do I really need an adapter for my joystick?</b></a></br>
+<b>A:</b> Yes. No joystick plugs directly into the parallel port because the connectors
+are different. Most of the adapters are very simple and just connects the joystick signals
+to the right parallel port pins. You can either build or buy one.<p>
+Even though your joystick connector fits in the serial port it will not work since the
+signals are very different.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq3"><b>Q: Which interface (adapter) should I build?</b></a></br>
+<b>A:</b> This depends on the type of controller and how many of them you want to use.
+Obviously you will want to build an interface that supports at least the number of
+controllers you plan to use.<p>
+For 1-2 digital joysticks the <a href="Diagrams/Amiga4Player.htm">Amiga4Player</a>
+interface is probably a good interface to build unless you want to use the adapter
+with Linux as well. Then look at the <a href="Diagrams/Linux0802.htm">Linux0802</a>
+or  <a href="Diagrams/LinuxDB9c.htm">LinuxDB9c</a> interfaces.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq4"><b>Q: The PPJoy diagram for an adapter looks different from the original...</b></a></br>
+<b>A:</b> All the original interface diagrams have been redrawn for PPJoy to give them
+all a consistent look-and-feel. In some instances the interfaces have also been modified
+to add support for extra buttons. PPJoy should work just fine with the adapter as
+presented on the original author/designer's webpage.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq5"><b>Q: Is PPJoy compatible with adapters for Linux?</b></a></br>
+<b>A:</b> Yes. The adapters with the word <b>Linux</b> in them are exactly the same
+adapters used by the Linux joystick drivers. The idea was that you could use the
+same adapter for both Operating Systems.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq6"><b>Q: Is PPJoy compatible with adapters for DirectPad Pro?</b></a></br>
+<b>A:</b> Yes. PPJoy supports the older DirectPad Pro adapters for people migrating
+from Windows 95/98/Me to Windows 2000/XP.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq7"><b>Q: I think the adapter or PPJoy damaged my computer or parallel port</b></a></br>
+<b>A:</b> I did not want to know that! Whilst PPJoy or the interfaces presented here should
+not harm your computer there are no guarantees. You use PPJoy entirely at your own risk!<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq8"><b>Q: What diode is used in the joystick adapters? </b></a></br>
+<b>A:</b> The adapters all use 1N4148 diodes but just about any other signal diode should work.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq9"><b>Q: Can I change the way PPJoy assigns my joystick buttons? </b></a></br>
+<b>A:</b> Yes. You can completely change the way that PPJoy assigns buttons and axes. You can
+even use buttons as axes and vice versa. See the <a href="UserManual/Mapping.htm"> Mapping </a>
+section of the PPJoy user manual.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq10"><b>Q: Why can't I use the FMS PPM interface under Windows 98/Me? </b></a></br>
+<b>A:</b> Windows 98 and Windows ME does not provide the parport.sys driver like Windows 2000/XP.
+PPJoy emulates some of this driver's functions using W98Ports.sys - but this driver does not
+provide the IRQ hooking functions of parport.sys.<p>
+If somebody cares to write the IRQ functions for W98Ports.sys then PPJoy will support the FMS
+PPM interface on Windows 98 as well...<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq11"><b>Q: Yellow exclamation mark over "Parallel Port Joystick Bus" icon, Error code 2,
+in Device Manager. </b></a></br>
+<b>A:</b> This error may occur on Windows 98 and Windows ME. It happens when Windows cannot find the
+"NTKERN.VXD" file. The reason for this is that it is not installed. It seems that Windows 98 only
+installs this file when USB support is installed. Try installing USB support.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq12"><b>Q: PPJoy Control Panel error message "Cannot open the Parallel Port Joystick Bus
+Enumerator." </b></a></br>
+<b>A:</b> For some reason the PPJoyBus.sys driver is not properly started. There can be a few reasons
+for this. One might be that you are attempting to run the PPJoy Control Panel without installing
+PPJoy with the setup application. Another reason might be that the drivers were not installed
+because driver signing prevented them from being installed. It might also be that the PPJoy
+setup could not find the support DLLs it needs.<p>
+On Windows 98 and ME you need to manually install the PPJoyBus.sys driver.<p>
+Look in Device Manager under "Sound, video and game controllers". You should see a device called
+"Parallel Port Joystick Bus". If it is not there the driver was not installed for some reason.<p>
+If the driver fails to start (exclamation mark in Device Manager) go to the "System" section of
+the Windows Event Viewer application. Look for messages from sources with the names "PPortJoystick"
+and "PPJoyBus". This should tell you why the device failed to start.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq13"><b>Q: PPJoy does not respond to my Playstation controller. </b></a></br>
+<b>A:</b> First, check the wiring of your adapter. The odds are that you wired the adapter incorrectly
+or improperly soldered a connection. There might also be a small percentage of Playstation controllers
+out there that PPJoy does not read properly.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq14"><b>Q: How do I make PPJoy work with my software? Do I copy a DLL? </b></a></br>
+<b>A:</b> You need to first unzip all the PPJoy installation files and then run the setup application.
+Then you need to define joysticks in the PPJoy Control Panel applet. Your application should then see
+the PPJoy joystick(s) just like any other joystick.<p>
+You do not need to copy any additional DLLs or other files to your application.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq15"><b>Q: Is PPJoy a new version of DirectPad Pro for Windows 2000/XP? </b></a></br>
+<b>A:</b> No. PPJoy is also a joystick driver and supports most of the devices supported by DirectPad
+Pro. But PPJoy is a completely different application and I have no ties to the developer of DirectPad
+Pro.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+
+<a name="faq16"><b>Q: Can I get a copy of the PPJoy source code? </b></a></br>
+<b>A:</b> No. PPJoy is not Open Source software. Unfortunately I also do not have time to assist
+with general questions about driver development. I will however gladly answer any specific question
+related to the way PPJoy reads joysticks.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq17"><b>Q: My axes are "reversed". Help! </b></a></br>
+<b>A:</b> You can change the direction (sense) of an axis using the mapping functionality.
+If the axis in question is an analog one (Mapped with an "<b>Analog <i>x</i></b>" value) you need to select
+the corresponding "<b>Analog <i>x</i> rev</b>") value to invert the axis. If it is mapped as to digital values
+("<b>Digital <i>x</i></b>") you can simply swap the two values.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+<a name="faq18"><b>Q: The up/down buttons on my DirectPad Pro interface does not work </b></a></br>
+<b>A:</b> Many of the DirectPad Pro interfaces uses pins 1 and 14 on the parallel port as inputs.
+These pins are in fact output pins but older motherboards or LPT adapters allowed them to be read
+as inputs.<p>
+There are a number of solutions: The most reliable is to build a different interface (like to Linux
+variants). You could also try to set the parallel port to "SPP" mode in your computer's BIOS - this
+may or may not work. Lastly you could try to find an older LPT adapter card and try that.<p>
+
+<div align="right"><a href="#toc"><font size=1>Back top the top</font></a></div>
+
+
+</body>
+</html>

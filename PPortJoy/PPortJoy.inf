@@ -1,0 +1,170 @@
+[Version]
+
+Signature="$CHICAGO$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+;
+Provider=%VENDOR%
+LayoutFile=layout.inf
+DriverVer=01/04/2008,0.83.5.000
+
+[SourceDisksNames]
+99=%DiskId%,,
+
+[SourceDisksFiles]
+PPortJoy.sys = 99
+PPortJoy64.sys = 99
+
+[DestinationDirs]
+CopyFilesSYSAMD64 = 12             ;%SystemRoot%\system32\drivers
+CopyFilesSYS = 12                   ;%SystemRoot%\system32\drivers
+CopyFilesDLL = 11                   ;%SystemRoot%\system or system32 - 98 or Win2000
+DefaultDestDir = 12
+
+[Manufacturer]
+%VENDOR%=Vendor,NTAMD64
+
+[Vendor]
+;Device Name	Install Section		PnP ID
+%Joystick%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEEF
+%Joystick1%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF0
+%Joystick2%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF1
+%Joystick3%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF2
+%Joystick4%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF3
+%Joystick5%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF4
+%Joystick6%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF5
+%Joystick7%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF6
+%Joystick8%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF7
+%Joystick9%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF8
+%Joystick10%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEF9
+%Joystick11%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEFA
+%Joystick12%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEFB
+%Joystick13%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEFC
+%Joystick14%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEFD
+%Joystick15%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEFE
+%Joystick16%=	Joystick.Inst,		PPJoyBus\VID_DEAD&PID_BEFF
+
+[Vendor.NTAMD64]
+;Device Name	Install Section		PnP ID
+%Joystick%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEEF
+%Joystick1%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF0
+%Joystick2%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF1
+%Joystick3%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF2
+%Joystick4%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF3
+%Joystick5%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF4
+%Joystick6%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF5
+%Joystick7%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF6
+%Joystick8%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF7
+%Joystick9%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF8
+%Joystick10%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEF9
+%Joystick11%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEFA
+%Joystick12%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEFB
+%Joystick13%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEFC
+%Joystick14%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEFD
+%Joystick15%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEFE
+%Joystick16%=	Joystick.Inst.NTAMD64,	PPJoyBus\VID_DEAD&PID_BEFF
+
+
+[Joystick.Inst]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = Joystick.AddReg, AddReg.Vendor_Driver
+
+[Joystick.Inst.NTx86]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = Joystick.AddReg
+
+[Joystick.Inst.NTAMD64]
+CopyFiles = CopyFilesSYSAMD64, CopyFilesDLL
+AddReg    = Joystick.AddReg
+
+[Joystick.Inst.NT]
+
+[Joystick.AddReg]
+;;HKLM,%KEY_OEM%\VID_DEAD&PID_BEEF,OEMName,,%Joystick%
+;;HKLM,%KEY_OEM%\VID_DEAD&PID_BEEF,OEMData,1, 0, 0, 0, 0, 2, 0, 0, 0
+;;HKLM,%KEY_OEM%\VID_DEAD&PID_BEEF,OEMHardwareID,,"PPJoyBus\VID_DEAD&PID_BEEF"
+
+[Joystick.Inst.NTx86.Services]
+AddService = PPortJoystick,%SPSVCINST_ASSOCSERVICE%,Vendor_Service_Inst,Joystick_EventLog_Inst
+
+[Joystick.Inst.NTAMD64.Services]
+AddService = PPortJoystick,%SPSVCINST_ASSOCSERVICE%,Vendor_Service_InstAMD64,Joystick_EventLog_InstAMD64
+
+[Joystick_EventLog_Inst]
+AddReg=Joystick_EventLog_AddReg
+
+[Joystick_EventLog_InstAMD64]
+AddReg=Joystick_EventLog_AddRegAMD64
+ 
+[Joystick_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,""%SystemRoot%\System32\Drivers\PPortJoy.sys""
+HKR,,TypesSupported,0x0001001,7 
+
+[Joystick_EventLog_AddRegAMD64]
+HKR,,EventMessageFile,0x00020000,""%SystemRoot%\System32\Drivers\PPortJoy64.sys""
+HKR,,TypesSupported,0x0001001,7 
+
+
+[CopyFilesSYS]
+PPortJoy.sys
+;;HIDGame.sys
+;;HidClass.sys
+;;HidParse.sys
+
+[CopyFilesSYSAMD64]
+PPortJoy64.sys
+;;HIDGame.sys
+;;HidClass.sys
+;;HidParse.sys
+
+[CopyFilesDLL]
+;;Hid.dll
+
+[AddReg.Vendor_Driver]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,"PPortJoy.sys"
+
+[Vendor_Service_Inst]
+DisplayName     = %SvcDesc%
+ServiceType     = 1                  ; SERVICE_KERNEL_DRIVER
+StartType       = 3                  ; SERVICE_DEMAND_START
+ErrorControl    = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary   = %12%\PPortJoy.sys
+LoadOrderGroup  = Extended Base
+
+[Vendor_Service_InstAMD64]
+DisplayName     = %SvcDesc%
+ServiceType     = 1                  ; SERVICE_KERNEL_DRIVER
+StartType       = 3                  ; SERVICE_DEMAND_START
+ErrorControl    = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary   = %12%\PPortJoy64.sys
+LoadOrderGroup  = Extended Base
+
+
+[Strings]
+; non localized strings
+SPSVCINST_ASSOCSERVICE= 0x00000002
+KEY_OEM="SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+
+;localized strings
+VENDOR          = "Deon vd Westhuysen"
+DiskId          = "Parallel Port Joystick Installation and Drivers Disk"
+
+SvcDesc         = "Parallel Port Joystick device driver"
+Joystick        = "Parallel Port Joystick"
+Joystick1       = "Parallel Port Joystick 1"
+Joystick2       = "Parallel Port Joystick 2"
+Joystick3       = "Parallel Port Joystick 3"
+Joystick4       = "Parallel Port Joystick 4"
+Joystick5       = "Parallel Port Joystick 5"
+Joystick6       = "Parallel Port Joystick 6"
+Joystick7       = "Parallel Port Joystick 7"
+Joystick8       = "Parallel Port Joystick 8"
+Joystick9       = "Parallel Port Joystick 9"
+Joystick10      = "Parallel Port Joystick 10"
+Joystick11      = "Parallel Port Joystick 11"
+Joystick12      = "Parallel Port Joystick 12"
+Joystick13      = "Parallel Port Joystick 13"
+Joystick14      = "Parallel Port Joystick 14"
+Joystick15      = "Parallel Port Joystick 15"
+Joystick16      = "Parallel Port Joystick 16"

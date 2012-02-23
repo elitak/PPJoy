@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SetVirtualJoyState", "SetVirtualJoyState.vcproj", "{FB798A9A-DC27-4EE3-B4A7-E8A34734E8ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB798A9A-DC27-4EE3-B4A7-E8A34734E8ED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FB798A9A-DC27-4EE3-B4A7-E8A34734E8ED}.Debug|Win32.Build.0 = Debug|Win32
+		{FB798A9A-DC27-4EE3-B4A7-E8A34734E8ED}.Release|Win32.ActiveCfg = Release|Win32
+		{FB798A9A-DC27-4EE3-B4A7-E8A34734E8ED}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

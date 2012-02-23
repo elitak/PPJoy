@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "APITest", "APITest.vcproj", "{A38D6F1F-9A3E-4D5E-A4C3-D8B8EB8EB2FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A38D6F1F-9A3E-4D5E-A4C3-D8B8EB8EB2FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A38D6F1F-9A3E-4D5E-A4C3-D8B8EB8EB2FA}.Debug|Win32.Build.0 = Debug|Win32
+		{A38D6F1F-9A3E-4D5E-A4C3-D8B8EB8EB2FA}.Release|Win32.ActiveCfg = Release|Win32
+		{A38D6F1F-9A3E-4D5E-A4C3-D8B8EB8EB2FA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

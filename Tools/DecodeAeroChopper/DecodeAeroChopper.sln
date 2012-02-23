@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DecodeAeroChopper", "DecodeAeroChopper.vcproj", "{927F490D-13E2-48CD-A841-363BD8815D70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{927F490D-13E2-48CD-A841-363BD8815D70}.Debug|Win32.ActiveCfg = Debug|Win32
+		{927F490D-13E2-48CD-A841-363BD8815D70}.Debug|Win32.Build.0 = Debug|Win32
+		{927F490D-13E2-48CD-A841-363BD8815D70}.Release|Win32.ActiveCfg = Release|Win32
+		{927F490D-13E2-48CD-A841-363BD8815D70}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

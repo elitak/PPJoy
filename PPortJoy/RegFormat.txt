@@ -1,0 +1,64 @@
+Axis and button mappings are kept in the registery. Driver will first search in
+the registry key for the specific device; then in the driver's registry key.
+
+The name of the registry entry will be "MapV1_xxx" where xxx is the hexdecimal
+joystick device type the entry applies to. [There can be multiple device type
+mappings in a single key.]
+
+Each entry (type REG_BINARY) contains the following structure:
+ <Header>
+ NumberOfAxisDefs	byte
+ NumberOfButtonDefs	byte
+ NumberOfHats (0 to 2)	byte
+ NumberOfConfigs	byte
+ <HIDusages>
+ Axis1_HID_Page		byte
+ Axis1_HID_Usage	byte
+ Axis2_HID_Page		byte
+ Axis2_HID_Usage	byte
+   ...
+   ...
+ AxisN_HID_Page		byte
+ AxisN_HID_Usage	byte
+ Button1_HID_Page	byte
+ Button1_HID_Usage	byte
+ Button2_HID_Page	byte
+ Button2_HID_Usage	byte
+   ...
+   ...
+ ButtonN_HID_Page	byte
+ ButtonN_HID_Usage	byte
+ Hat1_Page		byte
+ Hat1_Usage		byte
+ <ConfigSection(s)>
+ Axis1_Source_Min	byte
+ Axis1_Source_Max	byte
+ Axis2_Source_Min	byte
+ Axis2_Source_Max	byte
+   ...
+   ...
+ AxisN_Source_Min	byte
+ AxisN_Source_Max	byte
+ Button1_Source		byte
+ Button2_Source		byte
+   ...
+   ...
+ ButtonN_Source		byte
+ Hat1_Source_Up		byte
+ Hat1_Source_Down	byte
+ Hat1_Source_Left	byte
+ Hat1_Source_Right	byte
+
+*_Source fields are defined as follows:
+
+ Bit7	Bit6	Bits5-0
+  0     <7 bit index into button source array>
+  1	0	<6 bit index into axis source array to use as axis value - normal sense>
+  1	1	<6 bit index into axis source array to use as axis value - reversed sense>
+  1     0	<6 bit index into axis source array - pressed if value less than half scale>
+  1     1	<6 bit index into axis source array - pressed if value more than half scale>>
+
+For axes with a min and max source, if the min source points to axis source the max source is ignored.
+For hats if Source_up is analog and source_down is unused_field the analog is used as axis/axis_reversed
+ If Source_up is digital or source_up is analog and source2 is not unused field, the analog fields are
+ interpretend as digital (axis min/axis max) values instead of a single analog value.

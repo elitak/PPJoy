@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Setting PPJoy global options</H1>
+
+PPJoy has a number of global options that affects the operation of one or more interfaces.
+The options screen, shown below, can be activated by clicking on the <b>Options</b> button
+in the main PPJoy screen.
+<p>
+<center><IMG SRC="Options.gif"></center>
+<p>
+Currently PPJoy supports the following options:
+<ul> 
+ <li><b>Debug PPM RC interface</b>: Setting this option causes PPJoy to make a click (toggle
+   speaker state) every time it detects an incoming pulse from PPM interface (LPT IRQ
+   triggered). When the interface is working properly you should hear a steady tone.<p>
+
+ <li><b>Debug Playstation interfaces</b>: Setting this option causes PPJoy to make a click
+   each time it reads an invalid/corrupted data packet from a playstation controller.<p>
+
+ <li><b>Don't allocate ports to assigned joysticks</b>: This option only affects PPJoy
+   on Windows 2000, XP and 2003. When it is set PPJoy acts the same way is does on Windows
+   98, Me where it does not allocate a parallel port when a joystick is configured. Thus
+   you do not have to disable PPJoy to use a printer connected to the parallel port.<p>
+
+   It is recommended that you <b>do not</b> turn on this option. Turning on this option
+   may interfere with printing and will also disable the PPM RC interface. You need to
+   restart your computer for changes to this option to take effect.
+</ul>
+
+</BODY>
+
+</HTML>

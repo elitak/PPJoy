@@ -1,0 +1,111 @@
+[Version]
+
+Signature="$CHICAGO$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+;
+Provider=%VENDOR%
+LayoutFile=layout.inf
+DriverVer=01/04/2008,0.83.5.000
+
+[SourceDisksNames]
+99=%DiskId%,,
+
+[SourceDisksFiles]
+PPJoyBus.sys = 99
+PPJoyBus64.sys = 99
+
+[DestinationDirs]
+CopyFilesSYSAMD64 = 12             ;%SystemRoot%\system32\drivers
+CopyFilesSYS = 12                   ;%SystemRoot%\system32\drivers
+CopyFilesDLL = 11                   ;%SystemRoot%\system or system32 - 98 or Win2000
+DefaultDestDir = 12
+
+[Manufacturer]
+%VENDOR%=Vendor,NTAMD64
+
+[Vendor]
+;Device Name   Install Section     PnP ID
+%JoystickBus%= JoyBus.Inst,        root\PPJoyBus
+
+[Vendor.NTAMD64]
+;Device Name   Install Section       PnP ID
+%JoystickBus%= JoyBus.Inst.NTAMD64,  root\PPJoyBus
+
+[JoyBus.Inst]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = JoyBus.AddReg, AddReg.Vendor_Driver
+
+[JoyBus.Inst.NTx86]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+AddReg    = JoyBus.AddReg
+
+[JoyBus.Inst.NTAMD64]
+CopyFiles = CopyFilesSYSAMD64, CopyFilesDLL
+AddReg    = JoyBus.AddReg
+
+[JoyBus.Inst.NT]
+
+[JoyBus.AddReg]
+
+[JoyBus.Inst.NTx86.Services]
+AddService = PPJoyBus,%SPSVCINST_ASSOCSERVICE%,Vendor_Service_Inst,JoyBus_EventLog_Inst
+
+[JoyBus.Inst.NTAMD64.Services]
+AddService = PPJoyBus,%SPSVCINST_ASSOCSERVICE%,Vendor_Service_InstAMD64,JoyBus_EventLog_InstAMD64
+
+[JoyBus_EventLog_Inst]
+AddReg=JoyBus_EventLog_AddReg
+ 
+[JoyBus_EventLog_InstAMD64]
+AddReg=JoyBus_EventLog_AddRegAMD64
+ 
+[JoyBus_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,""%SystemRoot%\System32\Drivers\PPJoyBus.sys""
+HKR,,TypesSupported,0x0001001,7 
+
+[JoyBus_EventLog_AddRegAMD64]
+HKR,,EventMessageFile,0x00020000,""%SystemRoot%\System32\Drivers\PPJoyBus64.sys""
+HKR,,TypesSupported,0x0001001,7 
+
+
+[CopyFilesSYS]
+PPJoyBus.sys
+
+[CopyFilesSYSAMD64]
+PPJoyBus64.sys
+
+[CopyFilesDLL]
+
+[AddReg.Vendor_Driver]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,"PPJoyBus.sys"
+
+[Vendor_Service_Inst]
+DisplayName     = %SvcDesc%
+ServiceType     = 1                  ; SERVICE_KERNEL_DRIVER
+StartType       = 3                  ; SERVICE_DEMAND_START
+ErrorControl    = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary   = %12%\PPJoyBus.sys
+LoadOrderGroup  = Extended Base
+
+[Vendor_Service_InstAMD64]
+DisplayName     = %SvcDesc%
+ServiceType     = 1                  ; SERVICE_KERNEL_DRIVER
+StartType       = 3                  ; SERVICE_DEMAND_START
+ErrorControl    = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary   = %12%\PPJoyBus64.sys
+LoadOrderGroup  = Extended Base
+
+
+[Strings]
+; non localized strings
+SPSVCINST_ASSOCSERVICE= 0x00000002
+;;KEY_OEM="SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+
+;localized strings
+VENDOR          = "Deon vd Westhuysen"
+DiskId          = "Parallel Port Joystick Installation and Drivers Disk"
+
+SvcDesc         = "Parallel Port Joystick Bus device driver"
+JoystickBus     = "Parallel Port Joystick Bus"

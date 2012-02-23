@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Adding a new joystick or gamepad</H1>
+
+This document describes how to add a new joystick or gamepad to PPJoy using the Control Panel applet. See
+<a href="OpeningApplet.htm">Opening the Control Panel applet</a> for information on how to open
+the PPJoy control Panel applet.
+<p>
+<center><IMG SRC="PPJoyMain.gif"></center>
+<p>
+To add a new controller, click on the <b>Add...</b> button in the PPJoy applet. A new dialog box, similar
+to the one below, should appear.
+<p>
+<center><IMG SRC="AddJoy1.gif"></center>
+<p>
+Or you may get this error message:
+<p>
+<center><IMG SRC="AddJoyError.gif"></center>
+<p>
+PPJoy only supports 16 joysticks (due to a Windows limitation) and will give this error message when you try to add the
+17th. Joystick.
+<!--
+The error message means that you have configured joystick interfaces on all the parallel ports that PPJoy
+has detected on your machine; and that all the possible joysticks on those interfaces have been configured.
+I you want to configure any more joysticks you will first need to delete an existing joystick definition or
+add a new Parallel Port.
+-->
+<p>
+<center><IMG SRC="AddJoy2.gif"></center>
+<p>
+First, select the Parallel Port to which the joystick interface will be connected. Only the
+ports on which new joysticks can be created will be shown. The <b>Virtual port</b> is a special
+port that allows other applications to send joystick input via PPJoy.
+<p>
+If there is only one port available it will be automatically selected and the field will be
+greyed out.
+<p>
+<center><IMG SRC="AddJoy2a.gif"></center>
+<p>
+Next, select the type of controller that is you want to connect to the particular port. The interfaces
+available (see below) will depend on the selection made here. The following controller types are currently
+supported:
+<ul>
+ <li> <b> Joystick </b>: Standard digital joystick like on Commodore 64, Amstrad, Spectrum, etc. or any other
+      device that does not fit into the categories below.
+ <li> <b> Genesis pad </b>: This is for Sega Genesis/Megadrive controllers
+ <li> <b> SNES or NES pad </b>: Nintendo NES, SNES or Virtual Gameboy controllers
+ <li> <b> Playstation pad </b>: Playstation or Playstation 2 controllers
+ <li> <b> Virtual joystick </b>: Joystick device emulated by a Win32 application (minidriver)
+</ul>
+<p>
+Only the <b> Virtual joystick </b> device will only be shown when the <b>Virtual Port</b> is selected as parallel
+port. The other device types will be shown for normal parallel ports. 
+<p>
+You cannot have more than one controller type or interface type on a single port. If there are already joysticks
+defined for a given port the Controller Type and Interface Type will automatically be selected and greyed out.
+<p>
+<center><IMG SRC="AddJoy3.gif"></center>
+<p>
+Next, select the interface type that will be connected to the port. This field will be
+greyed out if there is already an interface type defined for the selected port. The list of interfaces shown
+are dependent on the Controller Type selected above.
+<p>
+Note that the Controller Type and Interface Type together determines which physical interface is used. For example
+the DirectPad Pro interface for the Playstation Pad Controller Type is very different from the DirectPad Pro 
+interface for the Joystick Controller type!
+<p>
+<center><IMG SRC="AddJoy4.gif"></center>
+<p>
+If the selected interface allows more than joystick to be connected (e.g.
+<a href="../Diagrams/TurboGraFX.htm">TurboGraFX</a> or <a href="../Diagrams/Linux0802.htm">
+Linux0802</a>) this field will allow you to choose the specific joystick. If the interface
+only caters for one joystick this field will be greyed out. 
+<p>
+<center><IMG SRC="AddJoy5.gif"></center>
+<p>
+The last field allows you to select the specific type of controller connected if applicable.
+<p>
+Currently the <b>SNES or NES pad</b> and <b>Genesis pad</b> controller type require a sub type
+to be specified because the sub types are read in different ways.
+<p>
+Sub types for <b>SNES or NES pad</b>:
+<ul>
+ <li> <b> SNES or Virtual Gameboy </b>
+ <li> <b> NES </b>
+</ul>
+Sub types for <b>Genesis pad</b>:
+<ul>
+ <li> <b> A,B,C and Start </b>: This is the earlier Genesis pad
+ <li> <b> A,B,C,X,Y,Z, Start and Mode </b>: This is the later Genesis pad with 6 buttons
+</ul>
+<p>
+Click on <b>Add</b> to add the joystick to the system. The screenshots shown below are from
+Windows XP; the sequence for Windows 2000 is very similar. On Windows 98/Me you will need
+your original CD as Windows 98/Me needs to install a driver from the CD.
+<p>
+<center><IMG SRC="AddJoy6.gif"></center>
+<p>
+Make sure that <b>Install the software automatically</b> (as shown) are selected and click
+on <b>Next</b>.
+<p>
+<center><IMG SRC="AddJoy7.gif"></center>
+<p>
+Click on <b>Continue Anyway</b> (Windows XP) or <b>Yes</b> (Windows 2000) if a warning appears about unsigned drivers. This will
+depend on your settings for driver signing.
+<p>
+<center><IMG SRC="AddJoy8.gif"></center>
+<p>
+Click on <b>Finish</b>.
+<p>
+<center><IMG SRC="AddJoy9.gif"></center>
+<p>
+Make sure that <b>Install the software automatically</b> (as shown) are selected and click
+on <b>Next</b>.
+<p>
+<center><IMG SRC="AddJoy10.gif"></center>
+<p>
+Click on <b>Finish</b>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>Linux gamecon.c</H2></CENTER>
+
+<!-- H3>Diagram</H3 -->
+<CENTER>
+<IMG src="LinuxGamecon.gif">
+</CENTER>
+<P>
+
+<H3>Notes</H3>
+<ul>
+ <li> You can only use true switch-based joysticks with this circuit.
+ <li> PPJoy, unlike Linux, will not allow you to use this interface on the same parallel port
+      as another interface type.
+ <li> The pull-up resistors are 10k Ohm.
+ <li> The original diagram only specifies "Power"; we source it from Pin 1 (nStrobe).
+      PPJoy drives pin 1, 14, 16 and 17 high; any one of these can be used as power source.
+ <li> General <a href="GeneralNotes.htm">notes</a> about interface construction
+</ul>
+<p>
+
+<H3>Credits</H3>
+The original diagram and information for this interface can be found at 
+<a href="http://www.charmed.com/support/kernel/docs/joystick-parport.txt">
+http://www.charmed.com/support/kernel/docs/joystick-parport.txt</a>.  
+
+</BODY>
+
+</HTML>

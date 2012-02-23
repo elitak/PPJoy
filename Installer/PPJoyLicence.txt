@@ -1,0 +1,13 @@
+PPJoy 0.8.4.6 Open Source
+=========================
+
+License
+-------
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+
+64 bit support
+--------------
+
+PPJoy now provides a driver for 64 bit Windows versions (e.g Vista x64 and Windows 7 x64). These drivers are test-signed and requires Windows to run in TEST MODE to load the drivers. Test signing mode can be enabled by running "BCDEDIT -SET TESTSIGNING ON" in an administrative command prompt.

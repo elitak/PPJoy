@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakeBitSwapLookup", "MakeBitSwapLookup.vcproj", "{76B71A19-2323-4BF3-97E9-2EF922BBDE3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76B71A19-2323-4BF3-97E9-2EF922BBDE3A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{76B71A19-2323-4BF3-97E9-2EF922BBDE3A}.Debug|Win32.Build.0 = Debug|Win32
+		{76B71A19-2323-4BF3-97E9-2EF922BBDE3A}.Release|Win32.ActiveCfg = Release|Win32
+		{76B71A19-2323-4BF3-97E9-2EF922BBDE3A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

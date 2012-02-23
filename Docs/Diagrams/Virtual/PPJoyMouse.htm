@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>PPJoyMouse virtual joystick</H2></CENTER>
+
+PPJoyMouse is an application to convert mouse movement into Windows joystick input via the
+PPJoy Virtual Joystick interface. Below is a screenshot of PPJoyMouse:
+<p>
+<CENTER>
+<IMG src="PPJoyMouse.gif">
+</CENTER>
+
+<H3>Selecting a Virtual Joystick</H3>
+
+The drop-down list next to <b>Joystick device</b> selects the virtual joystick to use. The list
+contains all possible virtual joystick names; it does not detect which virtual joysticks are
+actually configured in PPJoy. You need to configure at least one virtual joystick in PPJoy.
+(See <a href= "../../UserManual/AddingJoysticks.htm">Adding a new joystick or gamepad</a>.)
+<p>
+The text to the right of the drop-down list displays the status of the selected virtual joystick.
+
+<H3>Configuring movement sensitivity</H3>
+
+You can configure how sensitive the virtual joystick is by changing the values for <b>X Gain</b>
+(left-right), <b>Z Gain</b> (up-down) and <b>Y Gain</b> (mouse wheel). The larger the value the
+more sensitive will the virtual joystick be.
+<p>
+Once the minimum (or maximum) value for an axis is reached further mouse movement in that direction
+will be ignored.
+
+<H3>Loading and saving the configuration</H3>
+
+PPJoyMouse allows you to load and save the configuration to .INI files. You can also load an .ini
+file on startup by specifying it on the command-line when starting PPJoyMouse. For example
+<tt>PPJoyMouse.exe C:\Config\PPJoyMouse.ini</tt> will automatically attempt to load C:\Config\PPJoyMouse.ini
+on startup. If the config file is in the current directory you need to add ".\" in front of it. For
+example <tt>PPJoyMouse.ini</tt> becomes <tt>.\PPJoyMouse.ini</tt>.
+
+<H3>Additional notes</H3>
+<ul>
+ <li> The PPJoyMouse application must be running while you use the virtual (mouse) joystick.
+      You can however minimise it to the taskbar.
+</UL>
+</BODY>
+
+</HTML>

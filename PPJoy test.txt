@@ -1,0 +1,28 @@
+
+0. Check install fails
+   - If driver sign on
+
+
+1. Install on clean machine
+   - Test links to PPJoy mouse, joy, key, dll
+   - Test link to doc
+   - Test control panel
+   - Add joystick and test with PPJoy mouse
+
+2. Uninstall PPJoy
+   - Check program files cleaned
+   - Check start menu clean
+   - Check control panel deleted
+
+3. Install PPJoy again
+   - Make sure joy is listed (from step 1)
+   - Delete joystick
+
+4. Install PPJoy again
+   
+5. Uninstall PPJoy
+   - Check program files cleaned
+   - Check start menu clean
+   - Check control panel deleted
+
+

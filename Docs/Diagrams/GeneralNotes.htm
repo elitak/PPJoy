@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>General notes regarding interface construction</H2></CENTER>
+
+<H3>Warning</H3>
+Any hardware you connect to your Parallel Port is done at your own risk. Neither myself, not the
+original author of the interface, accepts any responsibility for any damage that may occur. This
+goes doubly if you construct the interface yourself.
+
+Please visit the original webpage for an interface before constructing it - there may be specific warnings
+or instructions there.
+
+<H3>Pull-up resistors</H3>
+Not all Parallel Ports are created equal. Some will function fine with any form of pull-up resistors on 
+the input lines while others will not function without it. In general the newer ECP Parallel Ports function
+without the pull-up resistors.
+
+The diagrams are the work of several different authors - and if they included pull-up resistors then it is
+included here as well.
+
+All interfaces, except PCAE and IanHarries, should function fine without any of the resistors. NEVER leave
+out the diodes!
+
+<H3>Pinout for additional fire buttons</H3>
+There are no universal standard for any additional fire buttons beyond the first button. The diagrams
+here use pin 9 of the joystick connector for the second fire button.
+
+What pins you use for fire buttons are up to you. One possibility is to use a DB15 connector for joysticks
+and wire the additional fire buttons to pins 10-15.
+
+</BODY>
+
+</HTML>

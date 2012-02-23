@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>PPJoyJoy virtual joystick mixer</H2></CENTER>
+
+PPJoyJoy is a joystick mixer application. It takes the input of a multiple joysticks and combines it into
+a single PPJoy Virtual Joystick. The input joysticks can be any joystick recognised by DirectX. Below is a screenshot of PPJoyJoy:
+<p>
+<CENTER>
+<IMG src="PPJoyJoy.gif">
+</CENTER>
+
+<H3>Selecting a Virtual Joystick</H3>
+
+The drop-down list next to <b>Joystick device</b> selects the virtual joystick to use. The list
+will show all the virtual joystick defined in the PPJoy Control Panel applet. You need to configure
+at least one virtual joystick in PPJoy before this application will run.
+(See <a href= "../../UserManual/AddingJoysticks.htm">Adding a new joystick or gamepad</a>.)
+<p>
+The text below the drop-down list displays the status of the selected virtual joystick.
+
+<H3>Specifying the control sources</H3>
+
+There a two drop-down lists associated with each control (axis or button) of the Virtual Joystick.
+The first drop-down list selects the joystick from which input will be sourced; the second list selects
+which control on that joystick will supply input to the destination control.
+As soon as you select a new value from a drop-down list it will take effect. 
+<p>
+To disable a control simply leave the source joystick drop-down list blank; or select <b>clear</b> if
+there was a previous selection.
+<p>
+The list of source controls are static and does not take into account the controls actually available
+on the source joystick. Selecting an unused control will simply be ignored. The same source control
+can be assigned to multiple destination controls.
+
+<H3>Adding an removing joysticks</H3>
+
+After you added (or plugged-in) a new joystick you need to click on the <b>Rescan joysticks</b> button
+before the new joystick will appear in the PPJoyJoy drop-down lists. PPJoyJoy does not automatically
+detect new joysticks.
+<p>
+If you remove/unplug a joystick PPJoyJoy will detect that and remove it from the list of available
+joysticks. If the joystick was selected as an input source, the source joystick for affect controls
+will be cleared but the other controls will still read their input as normal.
+
+<H3>Setting the update interval</H3>
+
+PPJoyJoy needs to continually scan the source joysticks for movement. The shorter this scan interval the
+more responsive will the virtual joystick be; at the cost of a higher CPU load. The frequnecy with which
+PPJoyJoy scans for joystick input can be changed by entering a new value (in Milliseconds) in the
+<b>Update interval</b> edit box and clicking on <b>Set</b>.
+
+<H3>Loading and saving the configuration</H3>
+
+PPJoyJoy allows you to load and save the configuration to .INI files. You can also load an .ini
+file on startup by specifying it on the command-line when starting PPJoyJoy. For example
+<tt>PPJoyJoy.exe C:\Config\PPJoyJoy.ini</tt> will automatically attempt to load C:\Config\PPJoyJoy.ini
+on startup. If the config file is in the current directory you need to add ".\" in front of it. For
+example <tt>PPJoyJoy.ini</tt> becomes <tt>.\PPJoyJoy.ini</tt>.
+
+<H3>Additional notes</H3>
+<ul>
+ <li> Each instance of PPJoyJoy feeds data for a single virtual joystick. You can run
+      multiple copies of PPJoyJoy if you have complicated mixing requirements.
+ <li> The PPJoyJoy application must be running while you use the virtual (mixer) joystick.
+      You can however minimise it to the taskbar.
+</UL>
+</BODY>
+
+</HTML>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<a name="intro"><h1> Introduction </h1></a>
+
+This page provides information on the timing parameters available to tune the way
+PPJoy scans various controller types.
+<p>
+The following controller types have customisable timing parameters:
+<ul>
+ <li> <a href="#genesis">Sega Genesis controllers</a>
+ <li> <a href="#lptswitch">LPT-switch controllers</a>
+ <li> <a href="#ppm">PPM R/C transmitters</a>
+ <li> <a href="#psx">Playstation controllers</a>
+ <li> <a href="#snes">SNES/NES controllers</a>
+</ul>
+
+<a name="genesis"><h1>Sega Genesis controller timing parameters </h1></a>
+The timing parameters presented below are applicable to all Genesys interfaces.
+<p>
+<center><IMG SRC="GenesisTiming.gif"></center>
+<p>
+There are two protocols used to Sega Genesis controllers. The protocol used depends
+on the controller subtype specified when the controller was added. If you specify
+"A,B,C and Start" as the controller type the 3-button protocol will be used; if you
+specify "A,B,C,X,Y,Z, Start and Mode" the 6-button protocol is used.
+<p>
+<ul>
+ <li> <b>Genesis interbit delay</b> specifies the number of microseconds delay between
+      changing the state of the Select line and reading the joystick state when using the
+      3-button protocol.
+ <li> <b>Genesis 6 button interbit delay</b> specifies the number of microseconds
+      delay between changing the state of the Select line and reading the joystick state
+      when using the 6-button protocol.
+</ul>
+<p>
+
+
+<a name="lptswitch"><h1>LPT-switch controller timing parameters </h1></a>
+The timing parameters presented below are applicable to the LPT-switch interface.
+<p>
+<center><IMG SRC="LPTswitchTiming.gif"></center>
+<p>
+The LPTswitch interface has a single timing parameter <b>LPTswitch row select delay</b>.
+This parameter specifies the delay, in microseconds, between setting the row-select line low and
+reading the column data from the interface.
+<p>
+
+
+<a name="ppm"><h1>PPM R/C transmitter timing parameters </h1></a>
+The timing parameters presented below are applicable to the PPM R/C transmitter interface.
+<p>
+<center><IMG SRC="PPMTiming.gif"></center>
+<p>
+The PPM R/C IRQ interface measures the durations between two consecutive low-to-high transitions
+of the IRQ pin. This means that PPJoy does not care whether the timing pulses are high or low.
+(Normal or Inverted signal)
+<p>
+The three applicable timing parameters are:
+<ul>
+ <li> <b>PPM min servo pulse width</b> specifies the minimum duration, in microseconds, between timing pulses.
+      If the duration between two consecutive pulses is less than this value the corresponding
+      joystick axis will report its minimum position.
+ <li> <b>PPM max servo pulse width</b> specifies the maximum duration, in microseconds, between timing pulses.
+      If the duration between two consecutive pulses is more than this value, but less than the
+      minimum sync pulse width, the corresponding joystick axis will report its maximum position.
+ <li> <b>PPM min sync pulse width</b> specifies the minimum duration, in microseconds,  of the sync pulse. An inter-pulse
+      duration greater than this value marks the beginning of a new frame. 
+</ul>
+
+
+<a name="psx"><h1>Playstation timing parameters </h1></a>
+The timing parameters presented below are applicable to Playstation interfaces.
+<p>
+<center><IMG SRC="PSXPacketTiming.gif"></center>
+<p>
+The figure above is timing for the transfer of an entire data packet. The diagram below details
+the transfer of a single byte between the PC and PSX controller.
+<p>
+<center><IMG SRC="PSXByteTiming.gif"></center>
+<p>
+There are five parameters for Playstation controllers:
+<ul>
+ <li> <b>PSX Sel delay:</b> specifies the duration, in microseconds, that the select signal will be taken
+      low before the first byte is transferred.
+ <li> <b>PSX Bit delay:</b> specifies the duration, in microseconds, the delay between setting the clock
+      signal high and writing a bit to the controller; and between setting the clock line low and
+      reading a bit from the controller.
+ <li> <b>PSX Ack1 delay:</b> specifies the maximum duration, in microseconds, to wait for an ACK pulse
+      from the controller after transferring the first byte to the controller. 
+ <li> <b>PSX AckX delay:</b> specifies the maximum duration, in microseconds, to wait for an ACK pulse
+      from the controller after transferring the second or later byte to the controller. 
+ <li> <b>PSX Tail delay:</b> specifies the duration, in microseconds, that the Select signal will remain
+      low after the packet transfer between the PC and controller is completed.
+</ul>
+
+
+<a name="snes"><h1>SNES/NES timing parameters </h1></a>
+The timing parameters presented below are applicable to all SNES/NES/Virtual Gameboy interfaces.
+<p>
+<center><IMG SRC="SNESTiming.gif"></center>
+<p>
+SNES/NES interfaces have two timing parameters:
+<ul>
+ <li> <b>SNES setup delay</b> specifies the duration, in microseconds, that the latch signal will be
+      held high.
+ <li> <b>SNES interbit delay</b> specifies the duration, in microseconds, between changes in the
+      signal. Every two bit delays an input bit will be read from the controller.
+</ul>
+
+</BODY>
+
+</HTML>

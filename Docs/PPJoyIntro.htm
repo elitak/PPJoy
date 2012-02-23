@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<body>
+
+<a name="intro"><h1> Introduction </h1></a>
+<h3> What is PPJoy? </h3>
+
+PPJoy is a joystick device driver for Windows 2000 and later. It no longer supports for Windows
+98 and Windows Me. PPJoy was originally designed for joysticks connected to the parallel port but
+it also supports other devices via the virtual joystick interface<p>
+
+Supported devices are:
+<ul>
+ <li> Digital joysticks for the Commodore 64, Atari, ZX Spectrum and other computers of that era.
+ <li> Playstation controllers.
+ <li> NES, SNES and Virtual Gameboy controllers
+ <li> Sega Genesis controllers
+ <li> PPM and PIC interface Radio Control transmitters
+ <li> Joystick emulation using the keyboard or mouse
+</ul>
+<p>
+
+Windows will treat these devices just like any other joystick and they can be used in any game or
+application that accepts joystick input.<p>
+
+<h3> Why PPJoy? </h3>
+
+There are lots of USB joysticks out there that are a lot less hassle to install and configure. So here is why
+you may want to use PPJoy:
+<ul>
+ <li> PPJoy is free for non-commercial use and you may already have a perfectly good controller supported
+      by PPJoy. A small donation will however be appreciated.
+ <li> Use the original controllers along with an emulator for a more authentic experience.
+ <li> Use your all-time favourite controller with PC games.
+ <li> Use PPJoy instead of a keyboard encoder in a game cabinet.
+ <li> You want to emulate joystick input from another application.
+</ul>
+On the other hand you still need to buy or build the proper adapter to connect your controller to your computer.
+
+
+<a name="supportedos"><h1> Supported Operating Systems </h1></a>
+
+PPJoy was designed for Windows 2000, Windows XP and later. PPJoy now also supports 64 bit versions of
+Windows - but there is a catch. Vista x64 and later requires signed drivers. The PPJoy drivers are only
+test signed, with requires the operation system to run in Test Mode. To can enable this by running:
+
+<pre>
+  BCDEDIT -SET TESTSIGNING ON
+</pre>
+
+from an administrative command prompt. I will set up a fund for donations towards buying a proper kernel mode signing
+certificate as soon as I can find a PayPal (can't receive money via PayPal in South Africa).
+<p>
+<b>There is (always) a small risk that PPJoy may crash or bluescreen your computer. Use it at
+your own risk.</b>
+<p>
+Windows NT 4 or Windows 95, 98 and ME is not supported.
+
+<a name="whatsnew"><h1> What's new </h1></a>
+
+version 0.84.5
+<ul>
+ <li>64 bit drivers (test signed).
+ <li>Fixed a few minor bugs.
+ <li>New NSIS based installer.
+</ul>
+
+Version 0.83
+<ul>
+ <li>PPM radio transmitters are now listed under their own device type (Radio control TX) in the Add Joysticks dialog box.
+</ul>
+
+Version 0.82
+<ul>
+ <li>Added POV hat support to PPJoy.
+ <li>Fixed bug in PPortJoy.cpl - adding more than one PPM interfaces per port
+ <li>Fixed bug in PPortJoy.cpl - fixed "Unable to verify IRQ" error message
+<!--
+ <li>Created new PPJoyJoy joystick mixer - combine input from multiple joysticks
+-->
+ <li>PPJoyCOM now detects and displays only installed COM ports
+ <li>PPJoyCOM now supports the RC AeroChopper (by Ambrosia) controller
+ <li>MiniDrivers (PPJoy<i>XXX</i>) now detects and displays only configured Virtual Joysticks
+ <li>MiniDrivers (PPJoy<i>XXX</i>) now prompt for confirmation before exit
+ <li>Virtual joysticks are reset (centered and off buttons off) when application exits
+ <li>PPJoy option registry entries no longer cause PPJoyBus warnings in EventLog.
+ <li>PPJoyBus now writes the name of invalid registry entries to EventLog.
+</ul>
+
+Version 0.80
+<ul>
+ <li>Added Sega Genesis interface as found in DirectPad Pro v6 
+ <li>Updated Mapping and Timing wizard layouts
+ <li>Can now set PPM and Playstation debug options via PPJoy control panel
+ <li>Added minimize button to PPJoyDLL
+ <li>Ability to change the number and type of axes and buttons (DirextX 9 required)
+ <li>Added new DLL type to PPJoyDLL
+ <li>Added new 8 channel input DLLs to PPJoyDLL
+ <li>Added PPJoyMouse mini-driver to mouse-to-joystick emulation
+ <li>Fixed integer overflow bug for PPM interface that resulted in reduced range
+ <li>Internal fixes to PPJoyKey (DX initialisation)
+ <li>Fixed default extension for INI files saved by PPJoyCOM, PPJoyDLL and PPJoyKey
+ <li>Added option to stop PPJoy from allocating parallel port when in operation
+ <li>Modified PPJoyCOM to accept more generic 9600 baud PIC protocols
+ <li>Slight web page layout modifications
+</ul>
+
+Version 0.78
+<ul>
+ <li>Configurable timing parameters for selected joystick interfaces
+ <li>Add 19200 baud FMS PIC protocol to PPJoyCOM
+ <li>Optional beep on IRQ for FMS PPM interface
+ <li>New PPJoyDLL mini-driver to read PCM R/C transmitters using SmartPropo DLLs
+ <li>Added extra support for buttons to PPJoyKey
+ <li>New-look documentation
+ <li>Additional error checking and messages during setup
+ <li>Corrected incorrect ACK timing bug with PSX interfaces
+ <li>Changed the default axis types for PPM R/C and Virtual (IOCTL) Joysticks
+</ul>
+
+Version 0.77
+<ul>
+ <li>Eventlog entries for Windows 2000/XP
+ <li>NES PowerPad controller support
+ <li>Beta FMS PPM R/C support
+ <li>Keyboard to joystick mini-driver
+ <li>FMS Serial interface (FMSLead) mini-driver
+</ul>
+Version 0.75
+<ul>
+ <li>Playstation controller support
+ <li>SNES/NES controller support
+ <li>Sega Genesis support
+ <li>Linux gamecon.c joystick interface
+ <li>User-mode joystick mini-drivers (IOCTL).
+ <li>Remapping of buttons and axes.
+</ul>
+
+<a name="upgrading"><h1> Upgrading from an older version </h1></a>
+
+When upgrading from version 0.83 or earlier please uninstall the old version first.
+
+Otherwise you can install a new version of PPJoy over an older version without uninstalling
+it first.
+
+<p>
+PPJoy v0.81 changes the default mapping of playstation controllers. The [],/\,O and X buttons are
+now mapped to the POV hat by default rather than to fire buttons.
+<p>
+PPJoy v0.78 changes the definition (and order) of axes for the PPM R/C and virtual joystick (IOCTL)
+devices to better accommodate Windows 98/Me and non-DirectX joystick applications. You must delete
+device or interface mappings you created in previous versions of PPJoy to take advantage of this
+change.
+<p>
+PPJoy v0.75 has undergone major internal changes. If you are upgrading from an earlier version
+your old joystick definitions will be deleted as part of the installation process. You will need
+to add the joysticks again after the install is finished. Also, for Windows 98/Me you need to add
+the Joystick Bus again (see <a href="UserManual/PostInstall98.htm">Additional installation steps
+for Windows 98 and Me</a>).
+
+
+<a name="future"><h1> Planned features </h1></a>
+
+The following are a list of thing that I hope to get around to (if and when time permits):
+<ul>
+ <li>Optimised scan routines that scan many joysticks in parallel.
+ <li>Force feedback for playstation controllers.
+ <li>DualShock2 analog buttons support.
+ <li>Better documentation / tutorials.
+ <li>Integration into the "Game Controllers" Control Panel applet.
+ <li>Visual Basic 6 and Delphi sample code for IOCTL (virtual joystick) interface.
+ <li>Dead-zone and sensitivity configuration.
+</ul>
+
+It is unlikely however that any of these features will be implemented as I have decided to suspend PPJoy development.
+See <a href="#note">A personal note</a>.
+
+<a name="licensing"><h1> Licensing </h1></a>
+
+<h3> Personal use </h3>
+PPJoy is free for non-profit use but a donation is requested towards further development of PPJoy.
+
+<h3> Commercial licensing </h3>
+If you derive an income from PPJoy, either directly or indirectly, you are required to pay
+a license fee for PPJoy. PPJoy may not be bundled with any item you sell.<p>
+
+Including a copy of PPJoy with an adapters you sell, or a direct download from the website where you sell
+the adapters are examples of using PPJoy to indirectly generating income.<p>
+
+Please <a href="Contact.htm#contact">contact me</a> for terms.
+
+<h3> Virtual joystick functions </h3>
+All applications using the PPJoy Virtual Joystick functions are required to display the
+following notice along with your copyright: "<b>This application makes us of the
+PPJoy virtual joystick functions. PPJoy is copyrighted by Deon van der Westhuysen</b>"<p>
+
+If you charge money for your application, or use the application in conjunction with
+a product you sell, you require a commercial license.<p>
+
+<h3> Linking to PPJoy </h3>
+Direct linking to (or mirroring) the PPJoy setup package from other websites are expressly
+prohibited. Links from non-commercial sites to the PPJoy homepage are very welcome.
+
+<a name="note"><h1> A personal note </h1></a>
+
+<strike>
+I have decided to stop PPJoy development.<p>
+
+Why? Firstly I can no longer afford to spend the many hours and days it takes to develop
+PPJoy and maintain the documentation.<p>
+
+Secondly, people on the Internet today seem to be an ungrateful bunch. I have received
+about 5 postcards and 4 donations. And thank-you emails have been few and far between...
+Hardly worth the effort I put into PPJoy! Instead I get emails mindlessly asking questions
+already answered in the manual.<p>
+
+Will there be a next version of PPJoy? I don't know. Probably not any time soon. And if
+there is a new version is will no longer be free. So Long, and Thanks for All the Fish.
+</strike>
+<p>
+Thank you to everybody who made the effort to track me down (on facebook and other places)
+and sent me thank you notes.
+<p>
+
+</body>
+</html>

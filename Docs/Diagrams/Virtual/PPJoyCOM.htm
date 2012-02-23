@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>PPJoyCOM virtual joystick</H2></CENTER>
+
+PPJoyCOM is an application to read data from a serial port and convert it into joystick input
+via the PPJoy Virtual Joystick interface. Below is a screenshot of PPJoyCOM:
+<p>
+
+<CENTER>
+<IMG src="PPJoyCOM.gif">
+</CENTER>
+<P>
+
+<H3>Selecting a Virtual Joystick</H3>
+
+The drop-down list next to <b>Joystick device</b> selects the virtual joystick to use. The list
+contains all possible virtual joystick names; it does not detect which virtual joysticks are
+actually configured in PPJoy. You need to configure at least one virtual joystick in PPJoy.
+(See <a href= "../../UserManual/AddingJoysticks.htm">Adding a new joystick or gamepad</a>.)
+<p>
+The text to the right of the drop-down list displays the status of the selected virtual joystick.
+
+<H3>Selecting a serial port</H3>
+
+The next drop-down list, next to <b> Serial Port </b> allows you to select the serial port to read.
+As with the virtual joystick list, the serial port list displays preconfigured ports and does not
+dynamically detect which ports are actually installed in the system.
+<p>
+The additional drop-down lists (below the serial port list) will be enabled or disabled depending
+on whether the serial protocol prescribes fixed values for them or not.
+<p>
+The display to the right of the serial port list shows the status of the selected port.
+
+<H3>Selecting a serial protocol</H3>
+The final drop-down list, <b> Serial protocol </b> determines how PPJoyCOM interprets the data it
+reads from the serial port. Currently the following protocols are supported:
+<ul>
+ <li> <b>FMS PIC 9600 baud (0xF0+ sync)</b> is the original serial PIC interface design for FMS 
+      by Ken Hewitt and described on his web page <a href="http://www.welwyn.demon.co.uk/fms_lead/fms_lead.htm">
+      http://www.welwyn.demon.co.uk/fms_lead/fms_lead.htm</a>.
+
+ <li> <b>FMS PIC 9600 baud (Generic)</b> is similar to the Ken Hewitt interface. It uses 0xF0
+      (or greater) as sync byte, followed by a byte for buttons and 1-8 bytes for the actual
+      channels. The channel values can be 0x00 to 0xEF. It should work for most 9600 baud
+      interfaces
+
+ <li> <b>FMS PIC 19200 baud (0xFF sync)</b> operates at 19200 baud and uses 0xFF as sync byte. The
+      sync bytes can be followed by 1-8 channel bytes. Each channel byte can be between 0x00 and
+      0xFE.
+
+ <li> <b>Zhen Hua 5 byte protocol</b> operates at 19200 baud and uses 0xF0 - 0xFF as sync byte; the
+      order of the received bits is swapped around. This protocol is meant to support the Zhen Hua
+      4 channel radio control transmitter.
+</ul>
+The text below the protocol list will display the status of the protocol parser. If you are not
+getting joystick input it should provide some clues.
+
+<H3>Recording a log file for debugging</H3>
+PPJoyCOM offers you the facility to record a log file of the serial input it reads from the COM
+port. This log enables you to verify that your device is actually sending data and that the data
+is in the expected format. You can user notepad, or any other text editor, to view the recorded
+log file.
+
+<p>
+To enable logging click on the <b>Record log</b> button. This will open a dialog bog where you
+enter the name for the log. Note that the file, if it exists, will be overwritten.
+<p>
+After logging has started the text on the <b>Record log</b> button changes to <b>Close log</b>.
+Clicking on <b>Close log</b> will stop logging and close the log file.
+
+<H3>Loading and saving the configuration</H3>
+
+PPJoyCOM allows you to load and save the configuration to .INI files. You can also load an .ini
+file on startup by specifying it on the command-line when starting PPJoyCOM. For example
+<tt>PPJoyCOM.exe C:\Config\PPJoyCOM.ini</tt> will automatically attempt to load C:\Config\PPJoyCOM.ini
+on startup. If the config file is in the current directory you need to add ".\" in front of it. For
+example <tt>PPJoyCOM.ini</tt> becomes <tt>.\PPJoyCOM.ini</tt>.
+
+
+<H3>Additional notes</H3>
+<ul>
+ <li> Each instance of PPJoyCOM reads data from single serial port and feeds the data to one
+      virtual joystick. You can run multiple copies of PPJoyCOM if you need to use more than one
+      serial port controller. You can however only use one controller per serial port.
+ <li> The PPJoyCOM application must be running while you use the virtual (COM port) joystick.
+      You can however minimise it to the taskbar.
+</UL>
+</BODY>
+
+</HTML>

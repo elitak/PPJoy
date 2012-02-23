@@ -1,0 +1,3 @@
+1. On uninstall, remove param reg keys from bus enumerator. [Decide if need to be so]
+
+2. Counter (5 times) until no-bug-donate check box is displayed...

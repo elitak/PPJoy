@@ -1,0 +1,7 @@
+Bugs:
+- Analog POV goes into NUL after about 320 deg. ==> Game controllers bug (it seems)
+
+Ideas:
+- Autofire?
+- Support for N64
+

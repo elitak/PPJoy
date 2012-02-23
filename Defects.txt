@@ -1,0 +1,7 @@
+1. No error message from installer if driversign= warn and click on stop for joystick device.
+   - There is an error message if you click on stop for bus enumerator.
+
+2. Warnings in eventviewer about options registry entries for PPjoybus
+
+3. Genesis 6 button (timing) issues (esp NTPadXP)
+

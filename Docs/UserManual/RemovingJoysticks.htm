@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Removing an existing joystick</H1>
+
+This document describes how to remove an existing joystick using the PPJoy Control Panel applet. See
+<a href="OpeningApplet.htm">Opening the Control Panel applet</a> for information on how to open
+the PPJoy control Panel applet.
+<p>
+<center><IMG SRC="DelJoy1.gif"></center>
+<p>
+To delete a joystick, select a joystick from the list displayed in the PPJoy applet, then click
+on <b>Remove</b>. <b>Remove</b> will only be enabled after you have selected a joystick from the
+list.
+<p>
+<center><IMG SRC="DelJoy2.gif"></center>
+<p>
+There are two options when deleting a joystick:
+<p>
+<b>Remove joystick config from DirectInput</b> should normally be ticked. If it is not ticked
+the rest of Windows will think the joystick is simply unplugged. It may also lead to failure
+when adding additional joysticks.
+<p>
+<b>Remove joystick driver from the system</b> determines whether to delete the PPJoy device 
+driver for the specified joystick. It can safely be unchecked. PPJoy uses a pool of up to 16 
+device drivers for the joysticks it emulates; and can reuse the driver of a deleted joystick.
+<!--
+<p>
+For Windows 98/Me you need to first delete the joystick with the standard <b>Game Controllers</b>
+applet, then with the PPJoy applet.<br>[<i>This is subject to later change. The Windows 98 support is
+preliminary.</i>]
+-->
+<p>
+Click on <b>OK</b> to confirm the deletion.
+</BODY>
+
+</HTML>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+<CENTER><H2>Powering the SNES interface</H2></CENTER>
+
+The SNES interface must power the controllers with +5v. This can either be sourced from the parallel port
+or from from the keyboard, joystick or USB interfaces.
+
+<H3>Single SNES controller</H3>
+
+A single SNES controller can be powered directly from the parallel
+port. Simply add the following components to any of the interfaces:
+<P>
+<TD> <IMG src="SNESPortPower.gif"> </TD>
+<p>
+The connections in the diagram is <b>in addition to</b> the normal interface wiring. If all
+this sounds confusing - build the SNES interface like it is shown on the DirectPad Pro page:
+<a href="http://www.arcadecontrols.com/Mirrors/www.ziplabel.com/dpadpro/snes.html">
+http://www.arcadecontrols.com/Mirrors/www.ziplabel.com/dpadpro/snes.html</a>.
+
+<H3>Multiple SNES controllers</H3>
+
+The parallel port should not be used to power more than one SNES controller. +5v for the SNES controllers
+can be sourced from many places, including the joystick port, keyboard port, USB port or harddrive power
+cable. You can also use a 7805 regulator with a wall adapter or battery.
+
+<H3>NES PowerPad controllers</H3>
+
+The controller (reportedly) uses a lot of power and should not be powered from the parallel port. +5v can
+be sourced from many places, including the joystick port, keyboard port, USB port or harddrive power cable.
+You can also use a 7805 regulator with a wall adapter or battery.
+
+<p>
+<!-- TD> <IMG src="SNESRegPower.gif"> </TD -->
+<p>
+
+</BODY>
+
+</HTML>

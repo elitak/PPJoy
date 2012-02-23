@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD/ HTML 4 Final//EN">
+<HTML>
+
+<HEAD>
+<TITLE>PPJoy - Parallel Port Joystick driver for Windows 98, Me, 2000 and XP</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+  // this page be loaded from the PPJoy frame
+  if (top.location == self.location)
+  {
+   top.location = "../PPJoyMain.htm?Page="+self.location;
+  }
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgColor=#ffffff>
+
+<H1>Changing the Driver Signing settings</H1>
+
+Windows 2000 and XP have a new feature that controls the installation of unsigned device drivers. There are
+three settings for Driver Signing:
+<ul>
+ <li> <b>Block</b>: This will prevent the installation of unsigned drivers.
+ <li> <b>Warn</b>: This will prompt the user whether to install an unsigned device driver or not.
+ <li> <b>Ignore</b>: The system will install unsigned drivers without prompting the user.
+</ul>
+The PPJoy device drivers are unsigned and you will need to set your system to <b>Warn</b> or
+<b>Ignore</b>. The rest of this document describes how to do that.
+
+[Unsigned device drivers are drivers that are not certified and digitally signed by Microsoft. They
+may impair your system performance. It is up to you to decide if you want to take the risk or not.]
+<p>
+<center><IMG SRC="DriverSign1.gif"></center>
+<p>
+First, locate the <b>My Computer</b> icon on the desktop or in Windows Explorer. Right-click on the
+<b>My Computer</b> icon and select <b>Properties</b>.
+<p>
+<center><IMG SRC="DriverSign2.gif"><br>Windows XP</center>
+<p>
+<center><IMG SRC="DriverSign2_2K.gif"><br>Windows 2000</center>
+<p>
+After clicking on the <b>Hardware</b> tab your screen should look like one of the two screens shown above.
+Now click on <b>Driver Signing</b>.
+<p>
+<center><IMG SRC="DriverSign3.gif"></center>
+<p>
+Make sure that either <b>Warn</b> or <b>Ignore</b> is selected. Then click on <b>OK</b>.
+</BODY>
+
+</HTML>
