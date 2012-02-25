@@ -30,6 +30,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#define WINVER 0x501
 #include "targetver.h"
 
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
