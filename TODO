@@ -1,0 +1,12 @@
+* get ppjoybus64,pportjoy64 into a vcproj if possible, else figure out how to build using cmake or even just as-is (ddk?)
+* figure out what's wrong with pportjoy64 (error 50)
+
+* ppjoykey and the like need uuid from win7 ddk... why?? should all projs link against lib/win7/ ?
+* use .vsprops to share configs between projects
+* apply changes to other configs (x64, release builds)
+* CMake? gen sln from it
+
+fixes:
+* "global namespace" -> c/c++ define "WINVER=0x0501"
+* "FileOpenDialog link error" -> link to lib/win7/uuid.lib
+* cant find PPxxx.lib -> linker dirs change ..\PPproj\Release to ..\Release
