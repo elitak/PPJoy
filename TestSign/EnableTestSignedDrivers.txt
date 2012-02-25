@@ -1,7 +1,0 @@
-FILE QUARANTINED
-
-Microsoft Forefront Protection for Exchange Server removed a file since it was found to match a filter.
-File name: "winmail.dat->PPJoyOpenSource0.8.4.zip->EnableTestSignedDrivers.bat"
-Filter name: "FILE FILTER= Vodacom File List: *.bat"
-
-Please contact the Vodacom IT Servicedesk if you require further information or assistance.
