@@ -63,8 +63,8 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\PPJoyInc;..\PPJoyAPI;..\Branding;C:\WinDDK\6001.18002\inc\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\PPJoyInc;..\PPJoyAPI;..\Branding;C:\WinDDK\7600.16385.1\inc\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;WINVER=0x501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -83,10 +83,10 @@
       <AdditionalIncludeDirectories>..\Branding;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>dinput.lib;dxguid.lib;setupapi.lib;PPJoyAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\WinDDK\7600.16385.1\lib\win7\i386\uuid.lib;dinput.lib;dxguid.lib;setupapi.lib;PPJoyAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Release/PPJoyJoy.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\PPJoyAPI\Release;C:\WinDDK\6001.18002\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\Release;C:\WinDDK\7600.16385.1\lib\wxp\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\Release/PPJoyJoy.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -111,7 +111,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\PPJoyInc;..\PPJoyAPI;..\Branding;C:\WinDDK\6001.18002\inc\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\PPJoyInc;..\PPJoyAPI;..\Branding;C:\WinDDK\7600.16385.1\inc\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -132,10 +132,10 @@
       <AdditionalIncludeDirectories>..\Branding;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>dinput.lib;dxguid.lib;setupapi.lib;PPJoyAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\WinDDK\7600.16385.1\lib\win7\i386\uuid.lib;dinput.lib;dxguid.lib;setupapi.lib;PPJoyAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Debug/PPJoyJoy.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\PPJoyAPI\Debug;C:\WinDDK\6001.18002\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\Debug;C:\WinDDK\7600.16385.1\lib\wxp\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Debug/PPJoyJoy.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
