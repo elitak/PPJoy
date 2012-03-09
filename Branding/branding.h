@@ -24,7 +24,7 @@
 // Version number - decimal values for each of the four components of the final version number
 #define	VERSION_MAJOR			0
 #define	VERSION_MINOR			84
-#define	VERSION_SUB1			6
+#define	VERSION_SUB1			7
 #define	VERSION_SUB2			000
 
 #define	ENABLE_64BIT_DRIVER
