@@ -24,6 +24,7 @@
 #include "branding.h"
 
 struct tm *TM;
+#define UTC (0)
 
 void CreateBusINF (FILE	*File)
 {
@@ -37,7 +38,8 @@ void CreateBusINF (FILE	*File)
 "LayoutFile=layout.inf\n"
 "DriverVer="
  ,File);
- fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1,TM->tm_mday,TM->tm_year+1900);
+// fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1,TM->tm_mday,TM->tm_year+1900);
+ fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1+UTC,TM->tm_mday+UTC,TM->tm_year+1900+UTC);
  fputs (
 "," VER_PRODUCTVERSION_STR "\n"
 "\n"
@@ -189,7 +191,8 @@ fputs (
 "LayoutFile=layout.inf\n"
 "DriverVer="
  ,File);
- fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1,TM->tm_mday,TM->tm_year+1900);
+// fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1,TM->tm_mday,TM->tm_year+1900);
+ fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1+UTC,TM->tm_mday+UTC,TM->tm_year+1900+UTC);
  fputs (
 "," VER_PRODUCTVERSION_STR "\n"
 "\n"
@@ -368,7 +371,8 @@ void CreateW98INF (FILE	*File)
 "LayoutFile=layout.inf\n"
 "DriverVer="
  ,File);
- fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1,TM->tm_mday,TM->tm_year+1900);
+// fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1,TM->tm_mday,TM->tm_year+1900);
+ fprintf (File,"%02d/%02d/%04d",TM->tm_mon+1+UTC,TM->tm_mday+UTC,TM->tm_year+1900+UTC);
  fputs (
 "," VER_PRODUCTVERSION_STR "\n"
 "\n"
@@ -444,7 +448,10 @@ void main (int argc, char **argv)
  char	FullPath[1024];
  char	*Filename;
  FILE	*File;
- time_t	Now;
+// time_t	Now;
+ time_t rawtime;
+
+
 
  if (argc>2)
  {
@@ -461,8 +468,11 @@ void main (int argc, char **argv)
    *(Filename++)= '\\';
  }
 
- time (&Now);
- TM= localtime (&Now);
+// time (&Now);
+// TM= localtime (&Now);
+ time (&rawtime);
+ TM = gmtime (&rawtime);
+
 
  strcpy (Filename,BUS_DRIVER_INFNAME);
  File= fopen (FullPath,"w");
