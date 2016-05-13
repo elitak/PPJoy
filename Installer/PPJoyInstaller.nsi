@@ -157,6 +157,7 @@ Section "PPJoyCore" SEC01
   ; Create shortcut for the PPJoy control panel
   CreateDirectory "$SMPROGRAMS\PPJoy Joystick Driver"
   CreateShortCut "$SMPROGRAMS\PPJoy Joystick Driver\Configure Joysticks.lnk" "$SYSDIR\control.exe" "$\"$INSTDIR\${PPJOYCPL}$\"" "$INSTDIR\${PPJOYCPL}"
+  CreateShortCut "$SMPROGRAMS\PPJoy Joystick Driver\Joystick Control Panel.lnk" "$SYSDIR\control.exe" "$\"$SYSDIR\joy.cpl$\"" "$SYSDIR\joy.cpl"
 
   ; Register control panel applet
   SetupHelper::nsis_GetOSName
@@ -271,6 +272,7 @@ Section Uninstall
 
   ; Remove the shortcuts to the program items
   Delete "$SMPROGRAMS\PPJoy Joystick Driver\Configure Joysticks.lnk"
+  Delete "$SMPROGRAMS\PPJoy Joystick Driver\Joystick Control Panel.lnk"
   Delete "$SMPROGRAMS\PPJoy Joystick Driver\PPJoy documentation.lnk"
   Delete "$SMPROGRAMS\PPJoy Joystick Driver\Virtual Joysticks\Radio Control TX.lnk"
   Delete "$SMPROGRAMS\PPJoy Joystick Driver\Virtual Joysticks\User DLL joystick.lnk"
