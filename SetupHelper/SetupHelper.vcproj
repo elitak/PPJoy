@@ -61,6 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="user32.lib"
 				LinkIncremental="2"
 				ModuleDefinitionFile=".\SetupHelper.def"
 				GenerateDebugInformation="true"
@@ -136,6 +137,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="user32.lib"
 				LinkIncremental="1"
 				ModuleDefinitionFile=".\SetupHelper.def"
 				GenerateDebugInformation="true"
