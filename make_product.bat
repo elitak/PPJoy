@@ -4,7 +4,7 @@ REM Set to the name of the sub-directories for the output files
 SET PRODUCTDIR=___Product___\Release
 SET DEBUGPRODDIR=___Product___\Debug
 
-SET PPJOYDIR=%~dp0
+SET "PPJOYDIR=%~dp0"
 
 ECHO Building PPJoy...
 
@@ -14,10 +14,10 @@ rem rem SET PPJOYZIP=PPJoySetup.zip
 REM =============================================================================
 
 REM ============ Compiler config ==============================
-SET DDKROOT=C:\WinDDK\7600.16385.0
-SET VSROOT=C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE
-SET VSE2005ROOT=C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\IDE
-SET VSE2005CMD=VCExpress.exe
+SET "DDKROOT=C:\WinDDK\7600.16385.1"
+SET "VSROOT=C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE"
+SET "VSE2005ROOT=C:\Program Files (x86)\Microsoft Visual Studio 8\Common7\IDE"
+SET "VSE2005CMD=VCExpress.exe"
 REM ===========================================================
 
 echo.
@@ -27,14 +27,14 @@ echo.
 
 PUSHD %PPJOYDIR%
 
-RD /s /Q "%PPJOYDIR%\%PRODUCTDIR%"
-RD /s /Q "%PPJOYDIR%\%DEBUGPRODDIR%"
+@If Exist "%PPJOYDIR%\%PRODUCTDIR%"   RD /s /Q "%PPJOYDIR%\%PRODUCTDIR%"
+@If Exist "%PPJOYDIR%\%DEBUGPRODDIR%" RD /s /Q "%PPJOYDIR%\%DEBUGPRODDIR%"
+@If Exist "%PPJOYDIR%\Scripts"        RD /s /Q "%PPJOYDIR%\Scripts"
 
 MD "%PPJOYDIR%\%PRODUCTDIR%"
 MD "%PPJOYDIR%\%PRODUCTDIR%\__Support__"
 MD "%PPJOYDIR%\%DEBUGPRODDIR%"
 MD "%PPJOYDIR%\%DEBUGPRODDIR%\__Support__"
-RD /s /Q "%PPJOYDIR%\Scripts"
 MD "%PPJOYDIR%\Scripts"
 
 
@@ -92,14 +92,18 @@ echo   Building setup helper plugin (legacy platform)
 echo ==================================================
 echo.
 
+SETLOCAL
+call "%VSE2005ROOT%\..\..\VC\bin\vcvars32.bat"
+SET "INCLUDE=%INCLUDE%%DDKROOT%\inc\api"
+SET "LIB=%LIB%;%DDKROOT%\lib\wxp\i386"
 cd /D "%PPJOYDIR%\SetupHelper"
-"%VSE2005ROOT%\%VSE2005CMD%" SetupHelper.sln /rebuild "Debug|Win32"
-"%VSE2005ROOT%\%VSE2005CMD%" SetupHelper.sln /rebuild "Release|Win32"
+"%VSE2005ROOT%\%VSE2005CMD%" /useenv SetupHelper.sln /rebuild "Debug|Win32"
+"%VSE2005ROOT%\%VSE2005CMD%" /useenv SetupHelper.sln /rebuild "Release|Win32"
 
 REM output is only in Buildlog.html - make plan later
+ENDLOCAL
 
 SETLOCAL
-
 REM Set env variables for command line compiler - will use is some cases
 call "%VSROOT%"..\..\..\VC\bin\vcvars32.bat
 SET INCLUDE=%INCLUDE%;"%DDKROOT%\inc\api
@@ -281,7 +285,7 @@ echo.
 
 cd /D "%PPJOYDIR%"
 call Scripts\CopyProducts.bat %PRODUCTDIR% %DEBUGPRODDIR%
-REM use for test certificate in an PFX exported file. DO NOT EXPORT real certificate to a PFX file
+REM use for test certificate in a PFX exported file. DO NOT EXPORT real certificate to a PFX file
 call Scripts\SignDriverFiles.bat %DDKROOT% /f TestSign\TestCertificate.pfx %PRODUCTDIR% %DEBUGPRODDIR%
 REM
 REM For real certificates use:
@@ -335,10 +339,40 @@ echo.
 
 "C:\Program Files (x86)\NSIS\makensis.exe" Installer\PPJoyInstaller.nsi
 
-echo Build/Copy done.
+echo.
+echo ======================================================
+echo   Build Done, Digitally signing final executable
+echo ======================================================
+echo.
 
+REM use for test certificate in a PFX exported file. DO NOT EXPORT real certificate to a PFX file
+call Scripts\SignDriverFiles.bat %DDKROOT% /f TestSign\TestCertificate.pfx %PRODUCTDIR% %DEBUGPRODDIR% PPJoySetup*.exe
+REM
+REM For real certificates use:
+REM call Scripts\SignDriverFiles.bat %DDKROOT% /s <CertStoreName> %PRODUCTDIR% %DEBUGPRODDIR% PPJoySetup*.exe
+REM
+
+
+If NOT Exist "%PRODUCTDIR%\..\PPJoySetup*.exe" Goto ERROR
+cd /D "%PPJOYDIR%"
+cd "%PRODUCTDIR%\.."
+SET "BINDIR=%CD%"
+cd /D "%PPJOYDIR%"
+@echo.
+echo Final built executable is at:
+FOR %%G IN (%BINDIR%\PPJoySetup*.exe) DO echo %%G
+cd %PPJOYDIR%
+echo.
+echo Process complete!
+Goto END
+
+:ERROR
+@echo.
+echo Process failed!!!
+Goto END
+
+:END
+@echo.
 ENDLOCAL
 
 POPD
-
-
