@@ -1,5 +1,5 @@
 # PPJoy
-Windows LPT/Virtual Joystick driver, originally developed by Deon Van Der Westhuysen. See:<br />
+Windows LPT/Virtual Joystick driver, originally developed by Deon Van Der Westhuysen. Special thanks to Deon for developing these drivers and releasing the code as open source. See:<br />
 http://ppjoy.blogspot.com
 
 This repository is a safe keeping of the PPJoy source code. It also includes some required fixes
